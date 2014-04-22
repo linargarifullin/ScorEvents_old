@@ -12,40 +12,40 @@
 		<!-- 	First Name 	-->
 		<div class="col-xs-6 col-sm-6 col-md-6">
 			<div class="form-group">
-				<input type="text" name="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1" autofocus>
+				<input type="text" name="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1" autofocus />
 			</div>
 		</div>
 
 		<!-- 	Last Name 	-->
 		<div class="col-xs-6 col-sm-6 col-md-6">
 			<div class="form-group">
-				<input type="text" name="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+				<input type="text" name="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2" />
 			</div>
 		</div>
 	</div>
 
 	<!-- 	Username 	-->
 	<div class="form-group">
-		<input type="text" name="username" class="form-control input-lg" placeholder="Username" tabindex="3">
+		<input type="text" name="username" class="form-control input-lg" placeholder="Username" tabindex="3" />
 	</div>
 
 	<!-- 	Email 	-->
 	<div class="form-group">
-		<input type="email" name="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+		<input type="email" name="email" class="form-control input-lg" placeholder="Email Address" tabindex="4" />
 	</div>
 
 	<div class="row">
 		<!-- 	Password 	-->
 		<div class="col-xs-6 col-sm-6 col-md-6">
 			<div class="form-group">
-				<input type="password" name="password" class="form-control input-lg" placeholder="Password" tabindex="5">
+				<input type="password" name="password" class="form-control input-lg" placeholder="Password" tabindex="5" />
 			</div>
 		</div>
 
 		<!-- 	Confirm Password 	-->
 		<div class="col-xs-6 col-sm-6 col-md-6">
 			<div class="form-group">
-				<input type="password" name="password_confirmation" class="form-control input-lg" placeholder="Confirm" tabindex="6">
+				<input type="password" name="password_confirmation" class="form-control input-lg" placeholder="Confirm" tabindex="6" />
 			</div>
 		</div>
 	</div>
