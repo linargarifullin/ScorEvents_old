@@ -12,10 +12,17 @@ a.nav-brand {
 	}
 
 /* col-xs (extra small) */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 	a.nav-brand {
-		margin-top: 20px;
+		margin-top: 30px;
+		margin-bottom: 5px;
 	}
+
+	h2 {
+		font-size: 180%;
+		margin-top: 5px;
+	}
+
 	input[type=text],
 	input[type=password],
 	input[type=email] {
