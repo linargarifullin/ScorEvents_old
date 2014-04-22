@@ -45,7 +45,7 @@
 		<!-- 	Confirm Password 	-->
 		<div class="col-xs-6 col-sm-6 col-md-6">
 			<div class="form-group">
-				<input type="password" name="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+				<input type="password" name="password_confirmation" class="form-control input-lg" placeholder="Confirm" tabindex="6">
 			</div>
 		</div>
 	</div>
