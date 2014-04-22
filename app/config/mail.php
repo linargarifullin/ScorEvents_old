@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'scorevents.team@gmail.com', 'name' => 'ScorEvents'),
+	'from' => array('address' => 'scorevents.team@gmail.com', 'name' => 'ScorEvents team'),
 
 	/*
 	|--------------------------------------------------------------------------

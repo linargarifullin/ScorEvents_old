@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html" charset="UTF-8">
+	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<link rel="stylesheet" href="../packages/todo-tpl/css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="../packages/todo-tpl/css/font-awesome.min.css" type="text/css" />
-	<link rel="stylesheet" href="../packages/todo-tpl/css/app.css" type="text/css" />
-	<link rel="stylesheet" href="../css/auth.css" type="text/css" />
+	<link rel="stylesheet" href="{{ secure_url('/') }}/packages/todo-tpl/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="{{ secure_url('/') }}/packages/todo-tpl/css/font-awesome.min.css" type="text/css" />
+	<link rel="stylesheet" href="{{ secure_url('/') }}/packages/todo-tpl/css/app.css" type="text/css" />
+	<link rel="stylesheet" href="{{ secure_url('/') }}/css/auth.css" type="text/css" />
 
 	<!--[if lt IE 9]>
 	<script src="../packages/todo-tpl/js/ie/respond.min.js" cache="false"></script>
@@ -20,7 +21,7 @@
 	<div class="container">
 		<!-- 	Website logo & title 	-->
 		<a class="nav-brand m-b-sm" href="../">
-			<img src="../img/logo.png" alt="ScorEvents">
+			<img src="{{ secure_url('/') }}/img/logo.png" alt="ScorEvents">
 			{{ Config::get('constants.site_title') }}
 		</a>
 
@@ -29,9 +30,11 @@
 				<h2>Hello {{ $first_name }} {{ $last_name }}!</h2>
 
 				<p>
-					Welcome to ScorEvents! To complete your registration, please proceed to the following <a href="../auth/activate/{{ $id }}/{{ $activation_key }}">activation link</a> or enter it directly into your browser:
+					Welcome to ScorEvents! To complete your registration, please proceed to the following <a href="{{ secure_url('auth/activate') }}/{{ $id }}/{{ $activation_key }}">activation link</a> or enter it directly into your browser:
 
-					https://scorevents.com/auth/activate/{{ $id }}/{{ $activation_key }}
+					<br>
+
+					{{ secure_url('auth/activate') }}/{{ $id }}/{{ $activation_key }}
 				</p>
 			</div>
 		</div>
@@ -43,7 +46,7 @@
 		<div class="text-center padder clearfix">
 			<p>
 				<small>
-					An <a href="../" id="footer">Active Foresight</a> &copy;2014 application
+					<a href="{{ secure_url('/') }}" id="footer">ScorEvents.com</a> &copy;2014
 				</small>
 			</p>
 		</div>

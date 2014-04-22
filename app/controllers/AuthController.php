@@ -95,18 +95,27 @@ class AuthController extends BaseController
 			$user_info->save();
 
 
-			// Generate activation key (length):
-			$user['activation_key'] = str_random(64);
+			// Join records
+			$user_data = array_merge(
+				User::find($user->id)->toArray(),
+				User::find($user->id)->userInfo->toArray()
+			);
 
+			
+			// Generate activation key (length):
+			$user_data['activation_key'] = str_random(64);
+
+			// Insert activation key in [user_activation] table.
 			DB::table('user_activation')->insert([
-				'user_id' 	=> $user->id,
-				'key' 		=> $user['activation_key']
+				'user_id' 	=> $user_data['id'],
+				'key' 		=> $user_data['activation_key']
 			]);
 
-			// Send activation link
-			Mail::send('emails/welcome', $user, function($message)
+
+			// Send activation link.
+			Mail::send('emails/welcome', $user_data, function($message) use($user_data)
 			{
-				$message->to($user->email)->subject('Welcome to ScorEvents! Please verify your email address');
+				$message->to($user_data['email'])->subject('Welcome to ScorEvents! Please verify your email address');
 			});
 
 			// Redirect to login page:
@@ -163,6 +172,10 @@ class AuthController extends BaseController
 
 			// Remove the useless record from [user_activation] table:
 			DB::table('user_activation')->where('user_id', $user_id)->delete();
+
+			// Redirect to login:
+			return Redirect::to('../auth/login')
+				->with('success_msg', 'Account activation is complete. You may now sign in.');
 		}
 
 		// Redirect to login:

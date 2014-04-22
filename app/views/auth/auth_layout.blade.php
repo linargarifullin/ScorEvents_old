@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html" charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<title>Welcome to {{ Config::get('constants.site_title') }} | {{ $page_title }}</title>
@@ -23,7 +23,7 @@
 
 	<div class="container">
 		<!-- 	Website logo & title 	-->
-		<a class="nav-brand m-b-sm" href="../">
+		<a class="nav-brand m-b-sm" href="{{ secure_url('/') }}">
 			<img src="../img/logo.png" alt="ScorEvents">
 			{{ Config::get('constants.site_title') }}
 		</a>
@@ -73,7 +73,7 @@
 		<div class="text-center padder clearfix">
 			<p>
 				<small>
-					An <a href="../" id="footer">Active Foresight</a> &copy;2014 application
+					An <a href="{{ secure_url('/') }}" id="footer">Active Foresight</a> &copy;2014 application
 				</small>
 			</p>
 		</div>
