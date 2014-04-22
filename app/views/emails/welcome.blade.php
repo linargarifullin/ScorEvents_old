@@ -120,7 +120,7 @@
 	<div class="container">
 		<!-- 	Website logo & title 	-->
 		<a class="nav-brand m-b-sm" href="{{ secure_url('/') }}">
-			<img src="{{ secure_url('/') }}/img/logo.png" alt="ScorEvents">
+			<img src="{{ $message->embed('{{ secure_url('/') }}/img/logo.png') }}" alt="ScorEvents">
 			{{ Config::get('constants.site_title') }}
 		</a>
 
