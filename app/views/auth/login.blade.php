@@ -10,7 +10,7 @@
 
 	<!-- 	Email or Username 	-->
 	<div class="form-group">
-		<input type="text" name="email_or_username" class="form-control input-lg" placeholder="Email or Username" tabindex="1" autofocus/>
+		<input type="text" name="email_or_username" class="form-control input-lg" placeholder="Email or Username" tabindex="1" autofocus />
 	</div>
 
 	<!-- 	Password 	-->

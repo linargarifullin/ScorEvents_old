@@ -4,15 +4,23 @@
 	<meta http-equiv="content-type" content="text/html" charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	
 	<title>Welcome to {{ Config::get('constants.site_title') }} | {{ $page_title }}</title>
-	<link rel="stylesheet" href="../packages/todo-tpl/css/bootstrap.css" type="text/css" />
+
+	<!-- 	Bootstrap (3.1.1) 	-->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+
+	<!-- 	"todo" CSS 		-->
 	<link rel="stylesheet" href="../packages/todo-tpl/css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="../packages/todo-tpl/css/font-awesome.min.css" type="text/css" />
 	<link rel="stylesheet" href="../packages/todo-tpl/css/font.css" type="text/css" cache="false" />
 	<link rel="stylesheet" href="../packages/todo-tpl/css/plugin.css" type="text/css" />
 	<link rel="stylesheet" href="../packages/todo-tpl/css/app.css" type="text/css" />
+
+	<!-- 	Native CSS 		-->
 	<link rel="stylesheet" href="../css/main.css" type="text/css" />
 	<link rel="stylesheet" href="../css/auth.css" type="text/css" />
+
 	<!--[if lt IE 9]>
 	<script src="../packages/todo-tpl/js/ie/respond.min.js" cache="false"></script>
 	<script src="../packages/todo-tpl/js/ie/html5.js" cache="false"></script>
@@ -79,10 +87,10 @@
 		</div>
 	</footer><!-- 	./footer 	-->
 
-	<!-- 	jQuery 	-->
+	<!-- 	jQuery (1.10.2) 	-->
 	<script src="../packages/todo-tpl/js/jquery.min.js"></script>
-	<!-- 	Bootstrap 	-->
-	<script src="../packages/todo-tpl/js/bootstrap.js"></script>
+	<!-- 	Bootstrap (3.1.1) 	-->
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 </body>
 </html>
