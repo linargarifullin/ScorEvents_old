@@ -5,11 +5,6 @@
  */
 Route::get('/', function()
 {
-	array_merge(
-				User::find(1)->toArray(),
-				User::find(1)->userInfo->toArray()
-			);
-	return View::make('emails/welcome')->with($user);
 	return Redirect::to('../auth/login');
 });
 
@@ -33,6 +28,13 @@ Route::get('account', function() {
 });
 Route::controller('account', 'AccountController');
 
+Route::get('email', function() {
+		array_merge(
+				User::find(1)->toArray(),
+				User::find(1)->userInfo->toArray()
+			);
+	return View::make('emails/welcome')->with($user);
+})
 
 /*
 
