@@ -1,19 +1,60 @@
 
-h2 {
-	color: #575757;
-}
-
 /* ScorEvents sign */
 a.nav-brand {
 	margin-top: 60px;
 	font-size: 40px;
 	color: gray;
 }
+	/* ScorEvents logo */
+	a.nav-brand img {
+		max-height: 60px;
+		max-width: 60px;
+	}
 
-/* ScorEvents logo */
-a.nav-brand img {
-	max-height: 60px;
-	max-width: 60px;
+/* col-xs (extra small) */
+@media (max-width: 768px) {
+	a.nav-brand {
+		margin-top: 20px;
+	}
+	input[type=text],
+	input[type=password],
+	input[type=email] {
+		font-size: 120%;
+	}
+}
+
+/* col-sm (small) */
+@media (min-width: 768px) {
+	a.nav-brand {
+		margin-top: 40px;
+	}
+	input[type=text],
+	input[type=password],
+	input[type=email] {
+		font-size: 130%;
+	}
+}
+
+/* col-md (medium) */
+@media (min-width: 992px) {
+	input[type=text],
+	input[type=password],
+	input[type=email] {
+		font-size: 140%;
+	}
+}
+
+/* col-lg (large) */
+@media (min-width: 1200px) {
+	input[type=text],
+	input[type=password],
+	input[type=email] {
+		font-size: 150%;
+	}
+}
+
+h2 {
+	color: #575757;
 }
 
 a.important_link {
