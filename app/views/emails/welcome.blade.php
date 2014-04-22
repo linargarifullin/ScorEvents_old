@@ -29,7 +29,9 @@
 				<h2>Hello {{ $first_name }} {{ $last_name }}!</h2>
 
 				<p>
-					Welcome to ScorEvents! To complete your registration, please proceed to the following <a href="">activation link</a> or enter it directly into your browser
+					Welcome to ScorEvents! To complete your registration, please proceed to the following <a href="../auth/activate/{{ $id }}/{{ $activation_key }}">activation link</a> or enter it directly into your browser:
+
+					https://scorevents.com/auth/activate/{{ $id }}/{{ $activation_key }}
 				</p>
 			</div>
 		</div>

@@ -96,13 +96,12 @@ class AuthController extends BaseController
 
 
 			// Generate activation key (length):
-			$activation_key = str_random(64);
+			$user['activation_key'] = str_random(64);
 
 			DB::table('user_activation')->insert([
 				'user_id' 	=> $user->id,
-				'key' 		=> $activation_key
+				'key' 		=> $user['activation_key']
 			]);
-
 
 			// Send activation link
 			Mail::send('emails/welcome', $user, function($message)
