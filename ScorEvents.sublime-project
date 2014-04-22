@@ -1,0 +1,33 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "app"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "app/config"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "app/controllers"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "app/models"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "app/views"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "public/css"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "."
+		}
+	]
+}

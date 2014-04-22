@@ -1,0 +1,55 @@
+
+h2 {
+	color: #575757;
+}
+
+/* ScorEvents sign */
+a.nav-brand {
+	margin-top: 60px;
+	font-size: 40px;
+	color: gray;
+}
+
+/* ScorEvents logo */
+a.nav-brand img {
+	max-height: 60px;
+	max-width: 60px;
+}
+
+a.important_link {
+	color: #0072C6;
+	font-weight: bold;
+}
+
+a#footer {
+	border-bottom: 1px dotted gray;
+}
+
+.colorgraph {
+	height: 1px;
+	border-top: 0;
+	background: gray;
+}
+
+input[type="checkbox"] {
+	margin-right: 5px;
+	width: 15px;
+	height: 15px;
+}
+
+label {
+	color: #575757;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.alert {
+	margin: 0 auto;
+	max-width: 90%;
+	font-size: 12px;
+}
+
+footer {
+	margin-top: 20px;
+	padding: 10px 20px;
+}
