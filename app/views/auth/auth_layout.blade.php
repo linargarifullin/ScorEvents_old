@@ -5,7 +5,7 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	
-	<title>TEST:Welcome to {{ Config::get('constants.site_title') }} | {{ $page_title }}</title>
+	<title>Welcome to {{ Config::get('constants.site_title') }} | {{ $page_title }}</title>
 
 	<!-- 	Bootstrap (3.1.1) 	-->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
