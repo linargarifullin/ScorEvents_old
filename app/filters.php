@@ -1,25 +1,23 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Authentication Filters
-|--------------------------------------------------------------------------
-|
-| The following filters are used to verify that the user of the current
-| session is logged into this application. The "basic" filter easily
-| integrates HTTP Basic authentication for quick, simple checking.
-|
+|---------------------------------------------------------------
+| Authentication Filter
+|---------------------------------------------------------------
+|	Checks if the current user is logged in and his account is
+|	activated.
+|	Else redirect to the login page.
 */
 
 Route::filter('auth', function()
 {
-	// User is not logged in
+	// Check if the user is not logged in
 	if (Auth::guest())
 	{
 		return Redirect::guest('../auth/login');
 	}
 
-	// User is activated!
+	// Check if the user is not activated
 	else if (User::find(Auth::user()->id)->status != 2)
 	{
 		Auth::logout();
@@ -30,39 +28,34 @@ Route::filter('auth', function()
 });
 
 
-Route::filter('auth.basic', function()
-{
-	return Auth::basic();
-});
+
 
 /*
-|--------------------------------------------------------------------------
+|---------------------------------------------------------------
 | Guest Filter
-|--------------------------------------------------------------------------
-|
-| The "guest" filter is the counterpart of the authentication filters as
-| it simply checks that the current user is not logged in. A redirect
-| response will be issued if they are, which you may freely change.
-|
+|---------------------------------------------------------------
+|	Checks if the current user is a guest.
+|	Else redirect him to the account page.
 */
 
 Route::filter('guest', function()
 {
+	// Check if the user is logged in
 	if (Auth::check())
 	{
 		return Redirect::to('../account');
 	}
 });
 
+
+
 /*
-|--------------------------------------------------------------------------
+|---------------------------------------------------------------
 | CSRF Protection Filter
-|--------------------------------------------------------------------------
-|
-| The CSRF filter is responsible for protecting your application against
-| cross-site request forgery attacks. If this special token in a user
-| session does not match the one given in this request, we'll bail.
-|
+|---------------------------------------------------------------
+|	Protects the application against Cross-Site Request Forgery
+|	attacks. Detects if the special token in the user's session
+|	doesn't match the one given in this request.
 */
 
 Route::filter('csrf', function()

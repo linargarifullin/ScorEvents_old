@@ -3,15 +3,18 @@
 class AccountController extends BaseController
 {
 	/*
-	|-------------------------------------------------
-	| 	ACCOUNT  CONTROLLER
-	|-------------------------------------------------
+	|---------------------------------------------------------------
+	|	ACCOUNT  CONTROLLER
+	|---------------------------------------------------------------
 	*/
 
 	public function __construct()
 	{
-		$this->beforeFilter('auth'); 					// Redirect if user is not logged in
-		$this->beforeFilter('csrf', ['on' => 'post']); 	// CSRF filter
+		// Prevent guests from accessing account pages:
+		$this->beforeFilter('auth');
+
+		// Protection from Cross-Site Request Forgery (CSRF):
+		$this->beforeFilter('csrf', ['on' => 'post']);
 
 		// Have to include this condition, because at this point Laravel doesn't know that filters are in place
 		if (Auth::check())

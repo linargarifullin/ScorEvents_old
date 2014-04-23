@@ -3,15 +3,21 @@
 class AuthController extends BaseController
 {
 	/*
-	|--------------------------------------------------------------------------
-	| 	USER  AUTHENTICATION  CONTROLLER
-	|--------------------------------------------------------------------------
+	|---------------------------------------------------------------
+	|	USER  AUTHENTICATION  CONTROLLER
+	|---------------------------------------------------------------
 	*/
 
 	public function __construct()
 	{
-		$this->beforeFilter('guest', ['except' => 'getLogout']);	// Redirect if user already logged in
-		$this->beforeFilter('csrf', ['on' => 'post']);				// CSRF filter
+		// Prevent logged in users from accessing auth pages (except logout):
+		$this->beforeFilter('guest', 	['except' 	=> 'getLogout']);
+
+		// Prevent guests from logging out:
+		$this->beforeFilter('auth', 	['only' 	=> 'getLogout']);
+
+		// Protection from Cross-Site Request Forgery (CSRF):
+		$this->beforeFilter('csrf', 	['on' 		=> 'post']);
 	}
 
 
@@ -28,14 +34,10 @@ class AuthController extends BaseController
 	public function postLogin()
 	{
 		$input = Input::all();
-
-		// Determine wether the user wants to remain signed in
-		$remember = isset($input['remember_me']) ? true : false;
-
-		// Authenticate with either username or email.
+		
 		// Input validation success!
-		if (Auth::attempt(['username' 	=> $input['email_or_username'], 'password' => $input['password']], $remember) OR 
-			Auth::attempt(['email' 		=> $input['email_or_username'], 'password' => $input['password']], $remember))
+		if (Auth::attempt(['username' 	=> $input['email_or_username'], 'password' => $input['password']], true) OR 
+			Auth::attempt(['email'    	=> $input['email_or_username'], 'password' => $input['password']], true))
 		{
 			// Update 'last_login' in [users] table:
 			User::find(Auth::user()->id)->update(['last_login' => new DateTime]);
@@ -44,7 +46,7 @@ class AuthController extends BaseController
 			return Redirect::to('../account');
 		}
 
-		// Input validation fail. Redirect back to login.
+		// Input validation fail. Redirect back to login w/ error msg.
 		else
 		{
 			return Redirect::to('../auth/login')
@@ -101,9 +103,9 @@ class AuthController extends BaseController
 				User::find($user->id)->userInfo->toArray()
 			);
 
-			
 			// Generate activation key (length):
 			$user_data['activation_key'] = str_random(64);
+
 
 			// Insert activation key in [user_activation] table.
 			DB::table('user_activation')->insert([
@@ -115,10 +117,12 @@ class AuthController extends BaseController
 			// Send activation link.
 			Mail::send('emails/welcome', $user_data, function($message) use($user_data)
 			{
-				$message->to($user_data['email'])->subject('Welcome to ScorEvents! Please verify your email address');
+				$message->to($user_data['email'])
+					->subject('Welcome to ScorEvents! Please verify your email address');
 			});
 
-			// Redirect to login page:
+
+			// Redirect to login w/ success msg:
 			return Redirect::to('../auth/login')
 				->with('success_msg', 'Important! Please check your inbox for a letter containing the account activation link.');
 		}
@@ -143,7 +147,7 @@ class AuthController extends BaseController
 		{
 			Auth::logout();
 
-			// Redirect to login:
+			// Redirect to login w/ success msg:
 			return Redirect::to('../auth/login')
 				->with('success_msg', 'You have successfully signed out.');
 		}
