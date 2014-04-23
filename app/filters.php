@@ -1,11 +1,11 @@
 <?php
 
 /*
-|---------------------------------------------------------------
+|--------------------------------------------------------------------------
 | Authentication Filter
-|---------------------------------------------------------------
-|	Checks if the current user is logged in and his account is
-|	activated.
+|--------------------------------------------------------------------------
+|
+|	Checks if the current user is logged in and his account is activated.
 |	Else redirect to the login page.
 */
 
@@ -31,9 +31,10 @@ Route::filter('auth', function()
 
 
 /*
-|---------------------------------------------------------------
+|--------------------------------------------------------------------------
 | Guest Filter
-|---------------------------------------------------------------
+|--------------------------------------------------------------------------
+|
 |	Checks if the current user is a guest.
 |	Else redirect him to the account page.
 */
@@ -50,12 +51,13 @@ Route::filter('guest', function()
 
 
 /*
-|---------------------------------------------------------------
+|--------------------------------------------------------------------------
 | CSRF Protection Filter
-|---------------------------------------------------------------
-|	Protects the application against Cross-Site Request Forgery
-|	attacks. Detects if the special token in the user's session
-|	doesn't match the one given in this request.
+|--------------------------------------------------------------------------
+|
+|	Protects the application against Cross-Site Request Forgery attacks.
+|	Detects if the special token in the user's session dosn't match
+|	the one given in this request.
 */
 
 Route::filter('csrf', function()
