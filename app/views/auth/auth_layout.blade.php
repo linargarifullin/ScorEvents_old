@@ -21,6 +21,9 @@
 	<link rel="stylesheet" href="../css/main.css" type="text/css" />
 	<link rel="stylesheet" href="../css/auth.css" type="text/css" />
 
+	<!-- 	 Favicon 	 	-->
+	<link rel="icon" href="../img/favicon.png"  type="image/png" />
+
 	<!--[if lt IE 9]>
 	<script src="../packages/todo-tpl/js/ie/respond.min.js" cache="false"></script>
 	<script src="../packages/todo-tpl/js/ie/html5.js" cache="false"></script>
@@ -32,7 +35,7 @@
 	<div class="container">
 		<!-- 	Website logo & title 	-->
 		<a class="nav-brand m-b-sm" href="{{ secure_url('/') }}">
-			<img src="../img/logo.png" alt="ScorEvents">
+			<img src="../img/logo_60x60.png" alt="ScorEvents">
 			{{ Config::get('constants.site_title') }}
 		</a>
 
