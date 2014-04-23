@@ -34,10 +34,12 @@ class AuthController extends BaseController
 	public function postLogin()
 	{
 		$input = Input::all();
+
+		$remember_me = isset($input['remember_me']) ? true : false;
 		
 		// Input validation success!
-		if (Auth::attempt(['username' 	=> $input['email_or_username'], 'password' => $input['password']], true) OR 
-			Auth::attempt(['email'    	=> $input['email_or_username'], 'password' => $input['password']], true))
+		if (Auth::attempt(['username' => $input['email_or_username'], 'password' => $input['password']], $remember_me) OR 
+			Auth::attempt(['email'    => $input['email_or_username'], 'password' => $input['password']], $remember_me))
 		{
 			// Update 'last_login' in [users] table:
 			User::find(Auth::user()->id)->update(['last_login' => new DateTime]);
