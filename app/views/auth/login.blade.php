@@ -28,19 +28,24 @@
 
 		<!-- 	Forgot password 	-->
 		<div class="col-xs-4 col-sm-6 col-md-6">
-			<a href="#" data-toggle="modal" data-target="#f_and_p_m" class="important_link pull-right" style="font-size: 14px;">Forgot password?</a>
+			<a href="#" data-toggle="modal" data-target="#f_and_p_m" class="important_link pull-right">Forgot password?</a>
 		</div>
 	</div>
 	
 	<hr class="colorgraph" />
 
 	<!-- 	Sign In (button) 	-->
-	<input type="submit" value="Sign In" class="btn btn-primary btn-block btn-lg" tabindex="3">
+	<div class="form-group">
+		<input type="submit" value="Sign In" class="btn btn-primary btn-block btn-lg" tabindex="3" />
+	</div>
 
-	<br>
 
 	<!-- 	Register (link) 	-->
-	<label>Don't have an account? <a href="../auth/registration" class="important_link">Sign up now</a>.</label>
+	<div class="form-group">
+		<label>
+			Don't have an account? <a href="../auth/registration" class="important_link">Sign up now!</a>
+		</label>
+	</div>
 
 {{ Form::close() }}
 

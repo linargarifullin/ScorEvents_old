@@ -74,6 +74,11 @@ a.important_link {
 	font-weight: bold;
 }
 
+a.important_link,
+label {
+	font-size: 14px;
+}
+
 a#footer {
 	border-bottom: 1px dotted gray;
 }
@@ -92,7 +97,6 @@ input[type="checkbox"] {
 
 label {
 	color: #575757;
-	font-size: 14px;
 	font-weight: normal;
 }
 
