@@ -37,6 +37,5 @@ Route::controller('account', 'AccountController');
  */
 Route::get('test', function()
 {
-	echo Config::get('constants.site_URL');
 	die('<br>completed.');
 });
