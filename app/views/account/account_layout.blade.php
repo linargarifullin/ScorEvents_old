@@ -19,6 +19,7 @@
 
 	<!-- 	Native CSS 		-->
 	<link rel="stylesheet" href="../css/main.css" type="text/css" />
+	<link rel="stylesheet" href="../css/account.css" type="text/css" />
 
 	<!-- 	 Favicon 	 	-->
 	<link rel="icon" href="../img/favicon.png"  type="image/png" />
@@ -33,7 +34,7 @@
 
 	<section class="vbox">
 		<!-- 	Top (header) menu 	-->
-		<header class="header bg-black navbar navbar-inverse pull-in">
+		<header class="header bg-dark navbar pull-in">
 
 			<!-- 	Top LEFT or for extra small screens 	-->
 			<div class="navbar-header nav-bar aside">
