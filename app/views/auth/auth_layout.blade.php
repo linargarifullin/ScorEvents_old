@@ -84,7 +84,7 @@
 		<div class="text-center padder clearfix">
 			<p>
 				<small>
-					An <a href="{{ secure_url('/') }}" id="footer">Active Foresight</a> &copy;2014 application
+					An <a href="../" id="footer">Active Foresight</a> &copy;2014 application
 				</small>
 			</p>
 		</div>

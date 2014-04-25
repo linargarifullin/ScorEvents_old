@@ -7,4 +7,6 @@
 */
 
 return [
-	'site_title' => 'ScorEvents'];
+	'site_title' 	=> 'ScorEvents',
+	'site_URL' 		=> url('/')
+];

@@ -37,18 +37,6 @@ Route::controller('account', 'AccountController');
  */
 Route::get('test', function()
 {
-	$user_data = [
-		'id' => 1,
-		'username' => 'user',
-		'email' => 'gariffusa@gmail.com',
-		'first_name' => 'first_name',
-		'last_name' => 'last_name',
-		'activation_key' => '%act_key%',
-	];
-	Mail::send('emails/welcome', $user_data, function($message) use($user_data)
-	{
-		$message->to($user_data['email'])->subject('Welcome to ScorEvents! Please verify your email address');
-	});
-
-	die('completed.');
+	echo Config::get('constants.site_URL');
+	die('<br>completed.');
 });
