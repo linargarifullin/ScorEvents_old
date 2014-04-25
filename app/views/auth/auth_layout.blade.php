@@ -34,7 +34,7 @@
 
 	<div class="container">
 		<!-- 	Website logo & title 	-->
-		<a class="nav-brand m-b-sm" href="{{ secure_url('/') }}">
+		<a class="nav-brand m-b-sm" href="../">
 			<img src="../img/logo_60x60.png" alt="ScorEvents">
 			{{ Config::get('constants.site_title') }}
 		</a>
