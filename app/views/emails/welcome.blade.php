@@ -8,12 +8,8 @@
 			margin-top: 60px;
 			font-size: 40px;
 			color: gray;
+			text-decoration: none;
 		}
-			/* ScorEvents logo */
-			a.nav-brand img {
-				max-height: 60px;
-				max-width: 60px;
-			}
 
 		/* col-xs (extra small) */
 		@media (max-width: 767px) {
@@ -69,19 +65,15 @@
 			}
 		}
 
-		h2 {
-			color: #575757;
-		}
-
 		a.important_link {
 			color: #0072C6;
 			font-weight: bold;
 		}
 
 		a#footer {
-			border-bottom: 1px dotted gray;
 			color: #0072C6;
 			font-weight: bold;
+			text-decoration: none;
 		}
 
 		.colorgraph {
@@ -118,15 +110,14 @@
 <body>
 
 	<div class="container">
-		<!-- 	Website logo & title 	-->
+		<!-- 	Website title 	-->
 		<a class="nav-brand m-b-sm" href="{{ secure_url('/') }}">
-			<img src="{{ secure_url('/') }}/img/logo.png" alt="ScorEvents">
 			{{ Config::get('constants.site_title') }}
 		</a>
 
 		<div class="row">
 			<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-				<h2>Hello {{ $first_name }} {{ $last_name }}!</h2>
+				<h3>Hello {{ $first_name }} {{ $last_name }}!</h3>
 
 				<p>
 					Welcome to ScorEvents! To complete your registration, please proceed to the following <a class="important_link" href="{{ secure_url('auth/activate') }}/{{ $id }}/{{ $activation_key }}">activation link</a> or enter it directly into your browser:

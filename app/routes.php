@@ -45,7 +45,7 @@ Route::get('test', function()
 		'last_name' => 'last_name',
 		'activation_key' => '%act_key%',
 	];
-	Mail::send('emails/microsoft_tpl', $user_data, function($message) use($user_data)
+	Mail::send('emails/welcome', $user_data, function($message) use($user_data)
 	{
 		$message->to($user_data['email'])->subject('Welcome to ScorEvents! Please verify your email address');
 	});
