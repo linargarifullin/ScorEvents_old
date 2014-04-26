@@ -1,3 +1,56 @@
+
+
 header {
 	height: 50px;
+}
+
+a.nav-brand {
+	letter-spacing: 1px;
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+	margin-top: 1px;
+}
+
+a.nav-brand img {
+	max-height: 30px;
+	max-width: 30px;
+	margin-top: -5px;
+}
+
+li.dropdown {
+	word-wrap: break-word;
+}
+
+/* Aligns elements in the left nav */
+div#user-full-name {
+	max-width: 160px;
+	display: inline-block;
+	height: 15px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@media (max-width: 767px) {
+	ul.nav i.fa {
+		width: 20px;
+	}
+
+	div#user-full-name {
+		max-width: 80%;
+		display: inline-block;
+		height: 15px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+
+.aside ul.nav i.fa {
+	width: 20px;
+}
+.aside.nav-vertical ul.nav i.fa {
+	width: auto;
 }

@@ -46,7 +46,7 @@
 				<!-- 	Logo & Title 	-->
 				<a href="../account" class="nav-brand">
 					<img src="../img/logo_60x60.png" alt="ScorEvents">
-					ScorEvents
+					{{ Config::get('constants.site_title') }}
 				</a>
 
 				<!-- 	Top RIGHT menu 	-->
@@ -59,7 +59,7 @@
 			<div class="collapse navbar-collapse">
 
 				<!-- 	Top MIDDLE 	-->
-				<form class="navbar-form navbar-left m-t-sm" role="search">
+				<form class="navbar-form navbar-left" role="search">
 					<div class="form-group"><div class="input-group" style="max-width: 325px;">
 						<input type="text" class="form-control no-border dk text-white" placeholder="Search ...">
 
@@ -68,20 +68,20 @@
 								<i class="fa fa-search"></i>
 							</button>
 						</span>
-						</li>
 					</div></div>
 				</form>
 				
 				<!-- 	Top RIGHT 	-->
 				<ul class="nav navbar-nav navbar-right">					
 					<li class="dropdown">
-						<!-- 	Avatar 	-->
-						<a href="#" class="dropdown-toggle" style="max-width: 250px;" data-toggle="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<i class="fa fa-user"></i>
-							{{ $user['first_name'] }} {{ $user['last_name'] }} <b class="caret"></b>
+							<div id="user-full-name">
+								{{ $user['first_name'].' '.$user['last_name'] }}fdsf sdkfjsladkjfl sjflksdj flkdklf s jfkl sjklfklsadjfklsj flsfl
+							</div>
+							<b class="caret"></b>
 						</a>
 
-						<!-- 	Name 	-->
 						<ul class="dropdown-menu animated fadeInLeft aside-md">
 							<li><a href="#">Profile</a></li>
 							<li><a href="../auth/logout">Logout</a></li>
@@ -102,51 +102,60 @@
 							<div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px">
 								<nav class="nav-primary hidden-xs" data-ride="collapse">
 									<ul class="nav">
+										<!-- 	User (only for XS displays) 	-->
+										<li class="dropdown visible-xs">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+												<i class="fa fa-user"></i>
+												<div id="user-full-name">
+													{{ $user['first_name'].' '.$user['last_name'] }}fdsf sdkfjsladkjfl sjflksdj flkdklf s jfkl sjklfklsadjfklsj flsfl
+												</div>
+												<b class="caret"></b>
+											</a>
+
+											<ul class="dropdown-menu animated fadeInLeft aside-md">
+												<li><a href="#">Profile</a></li>
+												<li><a href="../auth/logout">Logout</a></li>
+											</ul>
+										</li>
 										<!-- 	Dashboard 	-->
 										<li>
 											<a href="../account/dashboard">
-												<i class="fa fa-list-alt"></i>
-												<span>Dashboard</span>
+												<i class="fa fa-list-alt"></i><span>Dashboard</span>
 											</a>
 										</li>
 
 										<!-- 	Events 	-->
 										<li>
 											<a href="../account/dashboard">
-												<i class="fa fa-calendar"></i>
-												<span>Events</span>
+												<i class="fa fa-calendar"></i><span>Events</span>
 											</a>
 										</li>
 
 										<!-- 	Friends 	-->
 										<li>
 											<a href="../account/dashboard">
-												<i class="fa fa-group"></i>
-												<span>Friends</span>
+												<i class="fa fa-group"></i><span>Friends</span>
 											</a>
 										</li>
 
 										<!-- 	Map 	-->
 										<li>
 											<a href="../account/dashboard">
-												<i class="fa fa-map-marker"></i>
-												<span>Map</span>
+												<i class="fa fa-map-marker"></i><span>Map</span>
 											</a>
 										</li>
 
 										<!-- 	Profile 	-->
 										<li>
 											<a href="../account/dashboard">
-												<i class="fa fa-user"></i>
-												<span>Profile</span>
+												<i class="fa fa-user"></i><span>Profile</span>
 											</a>
 										</li>
 
 										<!-- 	Settings 	-->
 										<li>
 											<a href="../account/dashboard">
-												<i class="fa fa-cogs"></i>
-												<span>Settings</span>
+												<i class="fa fa-cogs"></i><span>Settings</span>
 											</a>
 										</li>
 									</ul>
