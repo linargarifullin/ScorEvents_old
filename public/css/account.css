@@ -21,6 +21,14 @@ li.dropdown {
 }
 
 /* Aligns elements in the left nav */
+nav.nav-primary ul.nav li a i.fa {
+	min-width: 20px;
+}
+
+.aside.nav-vertical ul.nav i.fa {
+	width: auto;
+}
+
 div#user-full-name {
 	max-width: 160px;
 	display: inline-block;
@@ -32,7 +40,7 @@ div#user-full-name {
 
 @media (max-width: 767px) {
 	ul.nav i.fa {
-		width: 20px;
+		min-width: 20px;
 	}
 
 	div#user-full-name {
@@ -46,9 +54,3 @@ div#user-full-name {
 }
 
 
-.aside ul.nav i.fa {
-	width: 20px;
-}
-.aside.nav-vertical ul.nav i.fa {
-	width: auto;
-}

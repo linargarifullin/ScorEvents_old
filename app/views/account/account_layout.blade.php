@@ -59,10 +59,10 @@
 			<div class="collapse navbar-collapse">
 
 				<!-- 	Search form 	-->
-				<form class="navbar-form navbar-left m-t-sm" role="search">
+				<form class="navbar-form navbar-left m-l-lg m-t-sm" id="searchbar" role="search">
 					<div class="form-group">
-						<div class="input-group input-s">
-						
+						<div class="input-group input-s-lg">
+
 							<input type="text" class="form-control input-sm no-border dk text-white" placeholder="Search ..." />
 
 							<span class="input-group-btn">
