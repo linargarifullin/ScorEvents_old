@@ -9,13 +9,11 @@ a.nav-brand {
 	font-size: 20px;
 	color: white;
 	font-weight: bold;
-	margin-top: 1px;
 }
 
 a.nav-brand img {
 	max-height: 30px;
 	max-width: 30px;
-	margin-top: -5px;
 }
 
 li.dropdown {

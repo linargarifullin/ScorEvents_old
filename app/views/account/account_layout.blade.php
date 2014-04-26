@@ -34,10 +34,10 @@
 
 	<section class="vbox">
 		<!-- 	Top (header) menu 	-->
-		<header class="header bg-dark navbar pull-in">
+		<header class="header bg-black navbar pull-in">
 
 			<!-- 	Top LEFT or for extra small screens 	-->
-			<div class="navbar-header nav-bar aside">
+			<div class="navbar-header nav-bar aside dk">
 				<!-- 	Top LEFT menu 	-->
 				<a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-primary">
 					<i class="fa fa-bars"></i>
@@ -58,17 +58,19 @@
 			<!-- 	Top MIDDLE & RIGHT 	-->
 			<div class="collapse navbar-collapse">
 
-				<!-- 	Top MIDDLE 	-->
-				<form class="navbar-form navbar-left" role="search">
-					<div class="form-group"><div class="input-group" style="max-width: 325px;">
-						<input type="text" class="form-control no-border dk text-white" placeholder="Search ...">
+				<!-- 	Search form 	-->
+				<form class="navbar-form navbar-left m-t-sm" role="search">
+					<div class="form-group">
+						<div class="input-group input-s">
+						
+							<input type="text" class="form-control input-sm no-border dk text-white" placeholder="Search ..." />
 
-						<span class="input-group-btn">
-							<button type="submit" class="btn btn-sm btn-primary btn-icon">
-								<i class="fa fa-search"></i>
-							</button>
-						</span>
-					</div></div>
+							<span class="input-group-btn">
+								<button type="submit" class="btn btn-sm btn-primary btn-icon"><i class="fa fa-search"></i></button>
+							</span>
+
+						</div>
+					</div>
 				</form>
 				
 				<!-- 	Top RIGHT 	-->
@@ -95,20 +97,21 @@
 		<!-- 	Middle part 	-->
 		<section>
 			<section class="hbox stretch">
+
 				<!-- 	Middle part: left menu 	-->
 				<aside class="aside bg-dark dk nav-vertical" id="nav">
 					<section class="vbox">
+
 						<section class="scrollable">
 							<div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px">
 								<nav class="nav-primary hidden-xs" data-ride="collapse">
 									<ul class="nav">
+
 										<!-- 	User (only for XS displays) 	-->
 										<li class="dropdown visible-xs">
 											<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 												<i class="fa fa-user"></i>
-												<div id="user-full-name">
-													{{ $user['first_name'].' '.$user['last_name'] }}
-												</div>
+												<div id="user-full-name">{{ $user['first_name'].' '.$user['last_name'] }}</div>
 												<b class="caret"></b>
 											</a>
 
@@ -117,47 +120,19 @@
 												<li><a href="../auth/logout">Logout</a></li>
 											</ul>
 										</li>
-										<!-- 	Dashboard 	-->
-										<li>
-											<a href="../account/dashboard">
-												<i class="fa fa-list-alt"></i><span>Dashboard</span>
-											</a>
-										</li>
 
-										<!-- 	Events 	-->
-										<li>
-											<a href="../account/dashboard">
-												<i class="fa fa-calendar"></i><span>Events</span>
-											</a>
-										</li>
+										<li><a href="../account/dashboard"><i class="fa fa-list-alt"></i><span>Dashboard</span></a></li>
 
-										<!-- 	Friends 	-->
-										<li>
-											<a href="../account/dashboard">
-												<i class="fa fa-group"></i><span>Friends</span>
-											</a>
-										</li>
-
-										<!-- 	Map 	-->
-										<li>
-											<a href="../account/dashboard">
-												<i class="fa fa-map-marker"></i><span>Map</span>
-											</a>
-										</li>
-
-										<!-- 	Profile 	-->
-										<li>
-											<a href="../account/dashboard">
-												<i class="fa fa-user"></i><span>Profile</span>
-											</a>
-										</li>
-
-										<!-- 	Settings 	-->
-										<li>
-											<a href="../account/dashboard">
-												<i class="fa fa-cogs"></i><span>Settings</span>
-											</a>
-										</li>
+										<li><a href="../account/dashboard"><i class="fa fa-calendar"></i><span>Events</span></a></li>
+										
+										<li><a href="../account/dashboard"><i class="fa fa-group"></i><span>Friends</span></a></li>
+										
+										<li><a href="../account/dashboard"><i class="fa fa-map-marker"></i><span>Map</span></a></li>
+										
+										<li><a href="../account/dashboard"><i class="fa fa-user"></i><span>Profile</span></a></li>
+										
+										<li><a href="../account/dashboard"><i class="fa fa-cogs"></i><span>Settings</span></a></li>
+								
 									</ul>
 								</nav>
 							</div>
@@ -173,17 +148,15 @@
 								<i class="fa fa-toggle-left pull-left"></i>
 							</a>
 						</footer>
+
 					</section>
 				</aside><!-- 	/ Middle part: left side 	-->
 				
 				<!-- 	Middle part: content (center) 	-->
-
 				<section>
-					<div class="wrapper">
-						<p class="h4">This dashboard layout start with a vbox.</p>
-						<p>You can use the .hbox and .vbox to build the complicated layouts.</p>
-					</div>
-				</section>
+					@yield('content')
+				</section><!-- 	./Middle part: content (center)	-->
+
 			</section>
 		</section>
 

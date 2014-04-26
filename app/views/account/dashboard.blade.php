@@ -1,5 +1,9 @@
 @extends('account/account_layout')
 
-@section('page_content')
+@section('content')
+
+<div class="wrapper">
+	<p class="h4">{{ $page_title }}</p>
+</div>
 
 @stop
