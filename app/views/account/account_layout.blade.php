@@ -85,7 +85,7 @@
 						</a>
 
 						<ul class="dropdown-menu animated fadeInLeft aside-md">
-							<li><a href="#">Profile</a></li>
+							<li><a href="../account/profile">Profile</a></li>
 							<li><a href="../auth/logout">Logout</a></li>
 						</ul>
 					</li>
