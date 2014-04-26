@@ -77,7 +77,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<i class="fa fa-user"></i>
 							<div id="user-full-name">
-								{{ $user['first_name'].' '.$user['last_name'] }}fdsf sdkfjsladkjfl sjflksdj flkdklf s jfkl sjklfklsadjfklsj flsfl
+								{{ $user['first_name'].' '.$user['last_name'] }}
 							</div>
 							<b class="caret"></b>
 						</a>
@@ -107,7 +107,7 @@
 											<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 												<i class="fa fa-user"></i>
 												<div id="user-full-name">
-													{{ $user['first_name'].' '.$user['last_name'] }}fdsf sdkfjsladkjfl sjflksdj flkdklf s jfkl sjklfklsadjfklsj flsfl
+													{{ $user['first_name'].' '.$user['last_name'] }}
 												</div>
 												<b class="caret"></b>
 											</a>
