@@ -190,7 +190,6 @@ class AuthController extends BaseController
 
 
 
-
 	/**
 	 * 	Any mistyped URL (e.g. auth/***)
 	 */

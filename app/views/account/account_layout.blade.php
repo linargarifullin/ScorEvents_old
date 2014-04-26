@@ -116,22 +116,34 @@
 											</a>
 
 											<ul class="dropdown-menu animated fadeInLeft aside-md">
-												<li><a href="#">Profile</a></li>
+												<li><a href="../account/profile">Profile</a></li>
 												<li><a href="../auth/logout">Logout</a></li>
 											</ul>
 										</li>
 
-										<li><a href="../account/dashboard"><i class="fa fa-list-alt"></i><span>Dashboard</span></a></li>
+										<li {{ Request::is('account/dashboard') ? 'class="active"' : '' }}>
+											<a href="../account/dashboard"><i class="fa fa-list-alt"></i><span>Dashboard</span></a>
+										</li>
 
-										<li><a href="../account/dashboard"><i class="fa fa-calendar"></i><span>Events</span></a></li>
+										<li {{ Request::is('account/events') ? 'class="active"' : '' }}>
+											<a href="../account/events"><i class="fa fa-calendar"></i><span>Events</span></a>
+										</li>
 										
-										<li><a href="../account/dashboard"><i class="fa fa-group"></i><span>Friends</span></a></li>
+										<li {{ Request::is('account/friends') ? 'class="active"' : '' }}>
+											<a href="../account/friends"><i class="fa fa-group"></i><span>Friends</span></a>
+										</li>
 										
-										<li><a href="../account/dashboard"><i class="fa fa-map-marker"></i><span>Map</span></a></li>
+										<li>
+											<a href=".#"><i class="fa fa-map-marker"></i><span>Map</span></a>
+										</li>
 										
-										<li><a href="../account/dashboard"><i class="fa fa-user"></i><span>Profile</span></a></li>
+										<li {{ Request::is('account/profile') ? 'class="active"' : '' }}>
+											<a href="../account/profile"><i class="fa fa-user"></i><span>Profile</span></a>
+										</li>
 										
-										<li><a href="../account/dashboard"><i class="fa fa-cogs"></i><span>Settings</span></a></li>
+										<li {{ Request::is('account/settings') ? 'class="active"' : '' }}>
+											<a href="../account/settings"><i class="fa fa-cogs"></i><span>Settings</span></a>
+										</li>
 								
 									</ul>
 								</nav>

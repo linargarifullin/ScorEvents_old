@@ -29,7 +29,6 @@ class AccountController extends BaseController
 
 
 
-
 	/**
 	 * 	DASHBOARD
 	 */
@@ -39,6 +38,69 @@ class AccountController extends BaseController
 			'page_title' 	=> 'Dashboard',
 			'user' 			=> $this->user
 		]);
+	}
+
+
+
+	/**
+	 * 	EVENTS
+	 */
+	public function getEvents()
+	{
+		return View::make('account/events', [
+			'page_title' 	=> 'Events',
+			'user' 			=> $this->user
+		]);
+	}
+
+
+
+	/**
+	 * 	FRIENDS
+	 */
+	public function getFriends()
+	{
+		return View::make('account/friends', [
+			'page_title' 	=> 'Friends',
+			'user' 			=> $this->user
+		]);
+	}
+
+
+
+	/**
+	 * 	PROFILE
+	 */
+	public function getProfile()
+	{
+		return View::make('account/profile', [
+			'page_title' 	=> 'Profile',
+			'user' 			=> $this->user
+		]);
+	}
+
+
+
+	/**
+	 * 	SETTINGS
+	 */
+	public function getSettings()
+	{
+		return View::make('account/settings', [
+			'page_title' 	=> 'Settings',
+			'user' 			=> $this->user
+		]);
+	}
+
+
+
+	/**
+	 * 	Any mistyped URL (e.g. auth/***)
+	 */
+	public function missingMethod($parameters = array())
+	{
+		// Redirect to login:
+		return Redirect::to('../account');
 	}
 	
 }
