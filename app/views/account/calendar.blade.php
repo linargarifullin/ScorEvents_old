@@ -119,8 +119,9 @@
 <aside style="background-color: #f3f5f9;">
 	<section id="right-side" class="vbox hidden" style="background-color: white;">
 		<section class="panel" style="border-left: none;">
+
 			<!-- 	Header 	-->
-			<header class="panel-heading font-bold text-center" style="font-size: 18px;">
+			<header class="panel-heading font-bold pos-rlt text-center" style="font-size: 18px;">
 				<span class="arrow left"></span>
 				Create Event
 			</header>
