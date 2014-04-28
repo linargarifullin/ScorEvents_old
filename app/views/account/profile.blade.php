@@ -2,8 +2,6 @@
 
 @section('content')
 
-<div class="wrapper">
-	<p class="h4">{{ $page_title }}</p>
-</div>
+<header class="header"><p class="h4">{{ $page_title }}</p></header>
 
 @stop

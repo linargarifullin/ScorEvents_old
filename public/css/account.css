@@ -25,7 +25,7 @@ nav.nav-primary ul.nav li a i.fa {
 }
 
 /* No border on top of the calendar */
-.calendar tbody {
+.calendar tbody, td {
 	border: none !important;
 }
 
