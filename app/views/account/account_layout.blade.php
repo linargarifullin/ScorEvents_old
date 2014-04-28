@@ -100,7 +100,6 @@
 			<!-- 	Menu (left) 	-->
 			<aside class="aside bg-dark dk nav-vertical" id="nav">
 				<section class="vbox">
-
 					<section class="scrollable">
 						<div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px">
 							<nav class="nav-primary hidden-xs" data-ride="collapse">
@@ -182,12 +181,12 @@
 
 		</section><!-- 	./MIDDLE PART	-->
 
-		<!-- 	Footer 	-->
-		<footer class="footer bg-black" id="footer">
-			<p><small>An <a href="../">Active Foresight</a> &copy;2014 application</small></p>
-		</footer><!-- 	./footer 	-->
-
 	</section>
+
+	<!-- 	Footer 	-->
+	<footer class="footer bg-black" id="footer">
+		<p><small>An <a href="../">Active Foresight</a> &copy;2014 application</small></p>
+	</footer><!-- 	./footer 	-->
 
 	<!-- 	jQuery (1.10.2) 	-->
 	<script src="../packages/todo-tpl/js/jquery.min.js"></script>
