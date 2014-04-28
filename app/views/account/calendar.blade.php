@@ -12,14 +12,12 @@
 <!-- 	aside (left) 	-->
 <aside class="aside aside-lg b-r">
 	<section class="vbox">
-		
-		<header class="header text-center"><p class="h4">{{ $page_title }}</p></header>
+		<header class="header text-center"><p class="h4 font-bold">{{ $page_title }}</p></header>
 
 		<section class="wrapper">
 
-			<div class="text-center clearfix">
-				<a class="btn btn-success m-b-lg"><i class="fa fa-plus"></i> Create Event</a>
-			</div>
+			<!-- 	New Event button 	-->
+			<div class="text-center clearfix"><a class="btn btn-success m-b-lg"><i class="fa fa-plus"></i> New Event</a></div>
 
 			<div id="calendar" class="m-t-lg">
 				<div class="calendar" id="cal_1t7p">
@@ -29,9 +27,7 @@
 						<tbody>
 							<tr>
 								<td><i class="fa fa-arrow-left"></i></td>
-
 								<td colspan="5" class="year span6"><div class="visualmonthyear">April 2014</div></td>
-
 								<td><i class="fa fa-arrow-right"></i></td>
 							</tr>
 						</tbody>
@@ -119,14 +115,13 @@
 </aside><!-- 	./aside (left) 	-->
 
 <!-- 	aside (right) 	-->
-<aside style="background-color: #f3f5f9;">
-	<section id="right-side" class="vbox hidden" style="background-color: white;">
-		<section class="panel scrollable" style="border-left: none;">
+<aside class="bg-light dk" id="right-side">
+	<section class="vbox hidden" id="right-side">
+		<section class="panel scrollable" style="border-left: none; border-bottom: none; height: 100%;">
 
 			<!-- 	Header 	-->
-			<header class="panel-heading font-bold pos-rlt text-center" style="font-size: 18px;">
-				<span class="arrow left"></span>
-				Create Event
+			<header class="panel-heading pos-rlt" style="font-size: 18px;">
+				<span class="arrow left"></span>New Event
 			</header>
 
 			<div class="panel-body">
@@ -497,8 +492,8 @@
 					<!-- 	Submit changes 	-->
 					<div class="form-group">
 						<div class="col-sm-12 col-sm-offset-2">
-							<button type="submit" class="btn btn-white">Cancel</button>
-							<button type="submit" class="btn btn-primary m-l-lg">Create Event</button>
+							<a href="#" class="btn btn-white">Cancel</a>
+							<button type="submit" class="btn btn-primary m-l-lg">Create</button>
 						</div>
 					</div>
 				</form>
@@ -522,6 +517,7 @@
 
 		<script type="text/javascript">
 		$("a.btn").click(function(){
+			$("aside#right-side").toggleClass("bg-light dk");
 			$("section#right-side").toggleClass("hidden");
 		});
 		</script>
