@@ -2,6 +2,9 @@
 
 @section('custom_css')
 <link rel="stylesheet" href="../packages/todo-tpl/js/calendar/bootstrap_calendar.css" type="text/css" cache="false">
+<link rel="stylesheet" href="../packages/todo-tpl/js/datepicker/datepicker.css" type="text/css" />
+<link rel="stylesheet" href="../packages/todo-tpl/js/select2/select2.css" type="text/css" />
+
 @stop
 
 @section('content')
@@ -118,7 +121,7 @@
 <!-- 	aside (right) 	-->
 <aside style="background-color: #f3f5f9;">
 	<section id="right-side" class="vbox hidden" style="background-color: white;">
-		<section class="panel" style="border-left: none;">
+		<section class="panel scrollable" style="border-left: none;">
 
 			<!-- 	Header 	-->
 			<header class="panel-heading font-bold pos-rlt text-center" style="font-size: 18px;">
@@ -131,7 +134,33 @@
 					<!-- 	Title 	-->
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Title</label>
-						<div class="col-sm-8"><input type="text"  class="form-control"></div>
+						<div class="col-sm-8">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Description</label>
+						<div class="col-sm-8">
+							<div id="editor" class="form-control" style="overflow:hidden;height:150px;max-height:150px">
+							</div>
+						</div>
+					</div>
+
+					<!-- 	Start Date 	-->
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Start Date</label>
+						<div class="col-sm-10">
+							<input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="12-02-2013" data-date-format="dd-mm-yyyy">
+						</div>
+					</div>
+
+					<!-- 	End Date 	-->
+					<div class="form-group">
+						<label class="col-sm-2 control-label">End Date</label>
+						<div class="col-sm-10">
+							<input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="12-02-2013" data-date-format="dd-mm-yyyy">
+						</div>
 					</div>
 
 					<div class="line line-dashed line-lg pull-in"></div>
@@ -151,73 +180,316 @@
 					<!-- 	State 	-->
 					<div class="form-group">
 						<label class="col-sm-2 control-label">State</label>
-							<div class="col-sm-10">
-								<div class="m-b m-t-sm">
-									<select id="select2-option" style="width:260px">
-										<optgroup label="Alaskan/Hawaiian Time Zone">
-											<option value="AK">Alaska</option>
-											<option value="HI">Hawaii</option>
-										</optgroup>
-										<optgroup label="Pacific Time Zone">
-											<option value="CA">California</option>
-											<option value="NV">Nevada</option>
-											<option value="OR">Oregon</option>
-											<option value="WA">Washington</option>
-										</optgroup>
-										<optgroup label="Mountain Time Zone">
-											<option value="AZ">Arizona</option>
-											<option value="CO">Colorado</option>
-											<option value="ID">Idaho</option>
-											<option value="MT">Montana</option>
-											<option value="NE">Nebraska</option>
-											<option value="NM">New Mexico</option>
-											<option value="ND">North Dakota</option>
-											<option value="UT">Utah</option>
-											<option value="WY">Wyoming</option>
-										</optgroup>
-										<optgroup label="Central Time Zone">
-											<option value="AL">Alabama</option>
-											<option value="AR">Arkansas</option>
-											<option value="IL">Illinois</option>
-											<option value="IA">Iowa</option>
-											<option value="KS">Kansas</option>
-											<option value="KY">Kentucky</option>
-											<option value="LA">Louisiana</option>
-											<option value="MN">Minnesota</option>
-											<option value="MS">Mississippi</option>
-											<option value="MO">Missouri</option>
-											<option value="OK">Oklahoma</option>
-											<option value="SD">South Dakota</option>
-											<option value="TX">Texas</option>
-											<option value="TN">Tennessee</option>
-											<option value="WI">Wisconsin</option>
-										</optgroup>
-										<optgroup label="Eastern Time Zone">
-											<option value="CT">Connecticut</option>
-											<option value="DE">Delaware</option>
-											<option value="FL">Florida</option>
-											<option value="GA">Georgia</option>
-											<option value="IN">Indiana</option>
-											<option value="ME">Maine</option>
-											<option value="MD">Maryland</option>
-											<option value="MA">Massachusetts</option>
-											<option value="MI">Michigan</option>
-											<option value="NH">New Hampshire</option>
-											<option value="NJ">New Jersey</option>
-											<option value="NY">New York</option>
-											<option value="NC">North Carolina</option>
-											<option value="OH">Ohio</option>
-											<option value="PA">Pennsylvania</option>
-											<option value="RI">Rhode Island</option>
-											<option value="SC">South Carolina</option>
-											<option value="VT">Vermont</option>
-											<option value="VA">Virginia</option>
-											<option value="WV">West Virginia</option>
-										</optgroup>
-									</select>
-								</div>
-							<div>
+						<div class="col-sm-10">
+							<div class="m-b m-t-sm">
+								<select id="select2-option" style="width:260px">
+									<optgroup label="Alaskan/Hawaiian Time Zone">
+										<option value="AK">Alaska</option>
+										<option value="HI">Hawaii</option>
+									</optgroup>
+									<optgroup label="Pacific Time Zone">
+										<option value="CA">California</option>
+										<option value="NV">Nevada</option>
+										<option value="OR">Oregon</option>
+										<option value="WA">Washington</option>
+									</optgroup>
+									<optgroup label="Mountain Time Zone">
+										<option value="AZ">Arizona</option>
+										<option value="CO">Colorado</option>
+										<option value="ID">Idaho</option>
+										<option value="MT">Montana</option>
+										<option value="NE">Nebraska</option>
+										<option value="NM">New Mexico</option>
+										<option value="ND">North Dakota</option>
+										<option value="UT">Utah</option>
+										<option value="WY">Wyoming</option>
+									</optgroup>
+									<optgroup label="Central Time Zone">
+										<option value="AL">Alabama</option>
+										<option value="AR">Arkansas</option>
+										<option value="IL">Illinois</option>
+										<option value="IA">Iowa</option>
+										<option value="KS">Kansas</option>
+										<option value="KY">Kentucky</option>
+										<option value="LA">Louisiana</option>
+										<option value="MN">Minnesota</option>
+										<option value="MS">Mississippi</option>
+										<option value="MO">Missouri</option>
+										<option value="OK">Oklahoma</option>
+										<option value="SD">South Dakota</option>
+										<option value="TX">Texas</option>
+										<option value="TN">Tennessee</option>
+										<option value="WI">Wisconsin</option>
+									</optgroup>
+									<optgroup label="Eastern Time Zone">
+										<option value="CT">Connecticut</option>
+										<option value="DE">Delaware</option>
+										<option value="FL">Florida</option>
+										<option value="GA">Georgia</option>
+										<option value="IN">Indiana</option>
+										<option value="ME">Maine</option>
+										<option value="MD">Maryland</option>
+										<option value="MA">Massachusetts</option>
+										<option value="MI">Michigan</option>
+										<option value="NH">New Hampshire</option>
+										<option value="NJ">New Jersey</option>
+										<option value="NY">New York</option>
+										<option value="NC">North Carolina</option>
+										<option value="OH">Ohio</option>
+										<option value="PA">Pennsylvania</option>
+										<option value="RI">Rhode Island</option>
+										<option value="SC">South Carolina</option>
+										<option value="VT">Vermont</option>
+										<option value="VA">Virginia</option>
+										<option value="WV">West Virginia</option>
+									</optgroup>
+								</select>
+							</div>
+						</div>
 						<input type="hidden" id="select2-tags" style="width:260px" value="brown"/>
+					</div>
+
+					<!-- 	Zip 	-->
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Zip</label>
+						<div class="col-sm-2"><input type="text"  class="form-control"></div>
+					</div>
+
+					<div class="line line-dashed line-lg pull-in"></div>
+
+					<!-- 	Age Limits 	-->
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Age Limits</label>
+						<div class="col-sm-1">
+							<div class="m-b m-t-sm">
+								<select id="select2-option">
+									<option value="none">none</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
+									<option value="24">24</option>
+									<option value="25">25</option>
+									<option value="26">26</option>
+									<option value="27">27</option>
+									<option value="28">28</option>
+									<option value="29">29</option>
+									<option value="30">30</option>
+									<option value="31">31</option>
+									<option value="32">32</option>
+									<option value="33">33</option>
+									<option value="34">34</option>
+									<option value="35">35</option>
+									<option value="36">36</option>
+									<option value="37">37</option>
+									<option value="38">38</option>
+									<option value="39">39</option>
+									<option value="30">30</option>
+									<option value="31">31</option>
+									<option value="32">32</option>
+									<option value="33">33</option>
+									<option value="34">34</option>
+									<option value="35">35</option>
+									<option value="36">36</option>
+									<option value="37">37</option>
+									<option value="38">38</option>
+									<option value="39">39</option>
+									<option value="40">40</option>
+									<option value="41">41</option>
+									<option value="42">42</option>
+									<option value="43">43</option>
+									<option value="44">44</option>
+									<option value="45">45</option>
+									<option value="46">46</option>
+									<option value="47">47</option>
+									<option value="48">48</option>
+									<option value="49">49</option>
+									<option value="50">50</option>
+									<option value="51">51</option>
+									<option value="52">52</option>
+									<option value="53">53</option>
+									<option value="54">54</option>
+									<option value="55">55</option>
+									<option value="56">56</option>
+									<option value="57">57</option>
+									<option value="58">58</option>
+									<option value="59">59</option>
+									<option value="60">60</option>
+									<option value="61">61</option>
+									<option value="62">62</option>
+									<option value="63">63</option>
+									<option value="64">64</option>
+									<option value="65">65</option>
+									<option value="66">66</option>
+									<option value="67">67</option>
+									<option value="68">68</option>
+									<option value="69">69</option>
+									<option value="70">70</option>
+									<option value="71">71</option>
+									<option value="72">72</option>
+									<option value="73">73</option>
+									<option value="74">74</option>
+									<option value="75">75</option>
+									<option value="76">76</option>
+									<option value="77">77</option>
+									<option value="78">78</option>
+									<option value="79">79</option>
+									<option value="80">80</option>
+									<option value="81">81</option>
+									<option value="82">82</option>
+									<option value="83">83</option>
+									<option value="84">84</option>
+									<option value="85">85</option>
+									<option value="86">86</option>
+									<option value="87">87</option>
+									<option value="88">88</option>
+									<option value="89">89</option>
+									<option value="90">90</option>
+								</select>
+							</div>
+						</div>
+						<label class="col-sm-1 control-lavel m-t-sm m-l-lg"> through </label>
+						<div class="col-sm-1 m-l-lg">
+							<div class="m-b m-t-sm">
+								<select id="select2-option">
+									<option value="none">none</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
+									<option value="24">24</option>
+									<option value="25">25</option>
+									<option value="26">26</option>
+									<option value="27">27</option>
+									<option value="28">28</option>
+									<option value="29">29</option>
+									<option value="30">30</option>
+									<option value="31">31</option>
+									<option value="32">32</option>
+									<option value="33">33</option>
+									<option value="34">34</option>
+									<option value="35">35</option>
+									<option value="36">36</option>
+									<option value="37">37</option>
+									<option value="38">38</option>
+									<option value="39">39</option>
+									<option value="30">30</option>
+									<option value="31">31</option>
+									<option value="32">32</option>
+									<option value="33">33</option>
+									<option value="34">34</option>
+									<option value="35">35</option>
+									<option value="36">36</option>
+									<option value="37">37</option>
+									<option value="38">38</option>
+									<option value="39">39</option>
+									<option value="40">40</option>
+									<option value="41">41</option>
+									<option value="42">42</option>
+									<option value="43">43</option>
+									<option value="44">44</option>
+									<option value="45">45</option>
+									<option value="46">46</option>
+									<option value="47">47</option>
+									<option value="48">48</option>
+									<option value="49">49</option>
+									<option value="50">50</option>
+									<option value="51">51</option>
+									<option value="52">52</option>
+									<option value="53">53</option>
+									<option value="54">54</option>
+									<option value="55">55</option>
+									<option value="56">56</option>
+									<option value="57">57</option>
+									<option value="58">58</option>
+									<option value="59">59</option>
+									<option value="60">60</option>
+									<option value="61">61</option>
+									<option value="62">62</option>
+									<option value="63">63</option>
+									<option value="64">64</option>
+									<option value="65">65</option>
+									<option value="66">66</option>
+									<option value="67">67</option>
+									<option value="68">68</option>
+									<option value="69">69</option>
+									<option value="70">70</option>
+									<option value="71">71</option>
+									<option value="72">72</option>
+									<option value="73">73</option>
+									<option value="74">74</option>
+									<option value="75">75</option>
+									<option value="76">76</option>
+									<option value="77">77</option>
+									<option value="78">78</option>
+									<option value="79">79</option>
+									<option value="80">80</option>
+									<option value="81">81</option>
+									<option value="82">82</option>
+									<option value="83">83</option>
+									<option value="84">84</option>
+									<option value="85">85</option>
+									<option value="86">86</option>
+									<option value="87">87</option>
+									<option value="88">88</option>
+									<option value="89">89</option>
+									<option value="90">90</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="line line-dashed line-lg pull-in"></div>
+
+					<!-- 	Status 	-->
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Status</label>
+						<div class="col-sm-6">
+							<div class="m-b m-t-sm">
+								<select id="select2-option">
+									<option value="1">Private</option>
+									<option value="">Public</option>
+								</select>
+							</div>
+						</div>
 					</div>
 
 					<div class="line line-dashed line-lg pull-in"></div>
@@ -243,10 +515,16 @@
 		<script src="../packages/todo-tpl/js/calendar/bootstrap_calendar.js" cache="false"></script>
 		<script src="../packages/todo-tpl/js/calendar/demo.js" cache="false"></script>
 		<script src="../packages/todo-tpl/js/libs/jquery.pjax.js" cache="false"></script>
+		<!-- 	Datepicker 	-->
+		<script src="../packages/todo-tpl/js/datepicker/bootstrap-datepicker.js"></script>
+		<!-- 	Select2 	-->
+		<script src="../packages/todo-tpl/js/select2/select2.min.js" cache="false"></script>
 
 		<script type="text/javascript">
 		$("a.btn").click(function(){
 			$("section#right-side").toggleClass("hidden");
 		});
 		</script>
+
+		<script src="../packages/todo-tpl/js/markdown/epiceditor.min.js" cache="false"></script>
 @stop
