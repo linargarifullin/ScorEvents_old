@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="../packages/todo-tpl/css/app.css" type="text/css" />
 	<link rel="stylesheet" href="../css/auth.css" type="text/css" />
 	<link rel="icon" href="../img/favicon.png" type="image/png" />
-	<style type="text/css">
+	<style>
 		body {
 			margin-top: 20px;
 			text-align: center;
