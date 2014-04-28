@@ -31,35 +31,34 @@
 	<![endif]-->
 </head>
 <body>
-
 	<section class="vbox">
-		<!-- 	Top (header) menu 	-->
+
+		<!-- 	TOP Header 	-->
 		<header class="header bg-black navbar pull-in">
 
-			<!-- 	Top LEFT or for extra small screens 	-->
 			<div class="navbar-header nav-bar aside">
-				<!-- 	Top LEFT menu 	-->
-				<a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-primary">
+				<!-- 	TOP (left) menu for extra small screens 	-->
+				<a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-primary" title="Menu">
 					<i class="fa fa-bars"></i>
 				</a>
 
 				<!-- 	Logo & Title 	-->
-				<a href="../account" class="nav-brand">
+				<a href="../account" class="nav-brand" title="To Home Page">
 					<img src="../img/logo_60x60.png" alt="ScorEvents">
 					{{ Config::get('constants.site_title') }}
 				</a>
 
-				<!-- 	Top RIGHT menu 	-->
-				<a class="btn btn-link visible-xs" data-toggle="collapse" data-target=".navbar-collapse">
-					<i class="fa fa-list"></i>
+				<!-- 	TOP (right) menu for extra small screens 	-->
+				<a class="btn btn-link visible-xs" data-toggle="collapse" data-target=".navbar-collapse" title="Search">
+					<i class="fa fa-search"></i>
 				</a>
-			</div><!-- ./ Top LEFT or XS screen -->
+			</div>
 
-			<!-- 	Top MIDDLE & RIGHT 	-->
+
+			<!-- 	TOP MIDDLE & RIGHT 	-->
 			<div class="collapse navbar-collapse">
-
 				<!-- 	Search form 	-->
-				<form class="navbar-form navbar-left m-l-lg m-t-sm" id="searchbar" role="search">
+				<form class="navbar-form navbar-left" id="searchbar" role="search">
 					<div class="form-group">
 						<div class="input-group input-s-lg">
 
@@ -73,8 +72,8 @@
 					</div>
 				</form>
 				
-				<!-- 	Top RIGHT 	-->
-				<ul class="nav navbar-nav navbar-right">					
+				<!-- 	User name (hidden from XS screens) 	-->
+				<ul class="nav navbar-nav navbar-right hidden-xs">					
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<i class="fa fa-user"></i>
@@ -90,104 +89,104 @@
 						</ul>
 					</li>
 				</ul>
-			</div><!-- 	./ Top MIDDLE & RIGHT 	-->
-		</header><!-- 	./Top (eader) menu 	-->
+			</div><!-- 	./TOP MIDDLE & RIGHT 	-->
+
+		</header><!-- 	./TOP Header 	-->
 		
 
-		<!-- 	Middle part 	-->
-		<section>
-			<section class="hbox stretch">
+		<!-- 	MIDDLE PART 	-->
+		<section class="hbox stretch">
 
-				<!-- 	Middle part: left menu 	-->
-				<aside class="aside bg-dark dk nav-vertical" id="nav">
-					<section class="vbox">
+			<!-- 	Menu (left) 	-->
+			<aside class="aside bg-dark dk nav-vertical" id="nav">
+				<section class="vbox">
 
-						<section class="scrollable">
-							<div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px">
-								<nav class="nav-primary hidden-xs" data-ride="collapse">
-									<ul class="nav">
+					<section class="scrollable">
+						<div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px">
+							<nav class="nav-primary hidden-xs" data-ride="collapse">
+								<ul class="nav">
 
-										<!-- 	User (only for XS displays) 	-->
-										<li class="dropdown visible-xs">
-											<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-												<i class="fa fa-user"></i>
-												<div id="user-full-name">{{ $user['first_name'].' '.$user['last_name'] }}</div>
-												<b class="caret"></b>
-											</a>
+									<!-- 	User (only for XS displays) 	-->
+									<li class="dropdown visible-xs">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+											<i class="fa fa-user"></i>
+											<div id="user-full-name">{{ $user['first_name'].' '.$user['last_name'] }}</div>
+											<b class="caret"></b>
+										</a>
 
-											<ul class="dropdown-menu animated">
-												<li><a href="../account/profile">Profile</a></li>
-												<li><a href="../auth/logout">Logout</a></li>
-											</ul>
-										</li>
+										<ul class="dropdown-menu animated">
+											<li><a href="../account/profile">Profile</a></li>
+											<li><a href="../auth/logout">Logout</a></li>
+										</ul>
+									</li>
 
-										<li {{ Request::is('account/dashboard') ? 'class="active"' : '' }}>
-											<a href="../account/dashboard" title="Go to Dashboard">
-												<i class="fa fa-list-alt"></i><span>Dashboard</span>
-											</a>
-										</li>
+									<li {{ Request::is('account/dashboard') ? 'class="active"' : '' }}>
+										<a href="../account/dashboard" title="Go to Dashboard">
+											<i class="fa fa-list-alt"></i><span>Dashboard</span>
+										</a>
+									</li>
 
-										<li {{ Request::is('account/calendar') ? 'class="active"' : '' }}>
-											<a href="../account/calendar" title="Go to Calendar">
-												<i class="fa fa-calendar"></i><span>Calendar</span>
-											</a>
-										</li>
-										
-										<li {{ Request::is('account/friends') ? 'class="active"' : '' }}>
-											<a href="../account/friends" title="Go to Friends">
-												<i class="fa fa-group"></i><span>Friends</span>
-											</a>
-										</li>
-										
-										<li>
-											<a href=".#" title="Go to Map">
-												<i class="fa fa-map-marker"></i><span>Map</span>
-											</a>
-										</li>
-										
-										<li {{ Request::is('account/profile') ? 'class="active"' : '' }}>
-											<a href="../account/profile" title="Go to Profile">
-												<i class="fa fa-user"></i><span>Profile</span>
-											</a>
-										</li>
-										
-										<li {{ Request::is('account/settings') ? 'class="active"' : '' }}>
-											<a href="../account/settings" title="Go to Settings">
-												<i class="fa fa-cogs"></i><span>Settings</span>
-											</a>
-										</li>
-								
-									</ul>
-								</nav>
-							</div>
-						</section>
-
-						<!-- 	Left menu footer (shrink & fullscreen) 	-->
-						<footer class="footer bg-gradient hidden-xs">
-							<a href="#" data-toggle="fullscreen" class="btn btn-sm btn-link m-l-n-sm" title="Full Screen">
-								<i class="fa fa-expand pull-left"></i>
-							</a>
-
-							<a href="#nav" data-toggle="class:nav-vertical" class="btn btn-sm btn-link m-l-n-sm" title="Fold/Unfold Menu">
-								<i class="fa fa-toggle-left pull-left"></i>
-							</a>
-						</footer>
-
+									<li {{ Request::is('account/calendar') ? 'class="active"' : '' }}>
+										<a href="../account/calendar" title="Go to Calendar">
+											<i class="fa fa-calendar"></i><span>Calendar</span>
+										</a>
+									</li>
+									
+									<li {{ Request::is('account/friends') ? 'class="active"' : '' }}>
+										<a href="../account/friends" title="Go to Friends">
+											<i class="fa fa-group"></i><span>Friends</span>
+										</a>
+									</li>
+									
+									<li>
+										<a href=".#" title="Go to Map">
+											<i class="fa fa-map-marker"></i><span>Map</span>
+										</a>
+									</li>
+									
+									<li {{ Request::is('account/profile') ? 'class="active"' : '' }}>
+										<a href="../account/profile" title="Go to Profile">
+											<i class="fa fa-user"></i><span>Profile</span>
+										</a>
+									</li>
+									
+									<li {{ Request::is('account/settings') ? 'class="active"' : '' }}>
+										<a href="../account/settings" title="Go to Settings">
+											<i class="fa fa-cogs"></i><span>Settings</span>
+										</a>
+									</li>
+							
+								</ul>
+							</nav>
+						</div>
 					</section>
-				</aside><!-- 	/ Middle part: left side 	-->
-				
-				<!-- 	Middle part: content (center) 	-->
-				<section>
-					@yield('content')
-				</section><!-- 	./Middle part: content (center)	-->
 
-			</section>
-		</section>
+					<!-- 	Left menu footer (shrink & fullscreen) 	-->
+					<footer class="footer bg-gradient hidden-xs">
+						<a href="#" data-toggle="fullscreen" class="btn btn-sm btn-link m-l-n-sm" title="Full Screen">
+							<i class="fa fa-expand pull-left"></i>
+						</a>
+
+						<a href="#nav" data-toggle="class:nav-vertical" class="btn btn-sm btn-link m-l-n-sm" title="Fold/Unfold Menu">
+							<i class="fa fa-toggle-left pull-left"></i>
+						</a>
+					</footer>
+
+				</section>
+			</aside><!-- 	./Menu (left) 	-->
+			
+			<!-- 	Content (center) 	-->
+			<section>
+				@yield('content')
+			</section><!-- 	./Content (center)	-->
+
+		</section><!-- 	./MIDDLE PART	-->
 
 		<!-- 	Footer 	-->
 		<footer class="footer bg-black" id="footer">
 			<p><small>An <a href="../">Active Foresight</a> &copy;2014 application</small></p>
 		</footer><!-- 	./footer 	-->
+
 	</section>
 
 	<!-- 	jQuery (1.10.2) 	-->

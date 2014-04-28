@@ -1,3 +1,6 @@
+header {
+	height: auto;
+}
 a.nav-brand {
 	letter-spacing: 1px;
 	font-size: 20px;
@@ -29,6 +32,12 @@ nav.nav-primary ul.nav li a i.fa {
  */
 ul.navbar-right #user-full-name {
 	width: 142px;
+	height: 15px;
+}
+
+form#searchbar {
+	margin-top: 10px;
+	margin-left: 20px;
 }
 
 #user-full-name {
@@ -46,10 +55,16 @@ ul.navbar-right #user-full-name {
 
 	#user-full-name {
 		max-width: 80%;
+		height: 15px;
 		display: inline-block;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+	}
+	form#searchbar {
+		border-top: 0px;
+		border-bottom: 0px;
+		margin: 0px -15px;
 	}
 }
 
