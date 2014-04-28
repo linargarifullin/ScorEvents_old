@@ -176,7 +176,9 @@
 			
 			<!-- 	Content (center) 	-->
 			<section>
+				<section class="hbox stretch bg-white-only">
 					@yield('content')
+				</section>
 			</section><!-- 	./Content (center)	-->
 
 		</section><!-- 	./MIDDLE PART	-->
