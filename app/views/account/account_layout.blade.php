@@ -34,7 +34,7 @@
 	<section class="vbox">
 
 		<!-- 	TOP Header 	-->
-		<header class="header bg-black navbar pull-in">
+		<header class="header bg-black navbar navbar-inverse pull-in">
 
 			<div class="navbar-header nav-bar aside">
 				<!-- 	TOP (left) menu for extra small screens 	-->
@@ -95,6 +95,7 @@
 		
 
 		<!-- 	MIDDLE PART 	-->
+	<section>
 		<section class="hbox stretch">
 
 			<!-- 	Menu (left) 	-->
@@ -154,7 +155,6 @@
 											<i class="fa fa-cogs"></i><span>Settings</span>
 										</a>
 									</li>
-							
 								</ul>
 							</nav>
 						</div>
@@ -176,17 +176,17 @@
 			
 			<!-- 	Content (center) 	-->
 			<section>
-				@yield('content')
+					@yield('content')
 			</section><!-- 	./Content (center)	-->
 
 		</section><!-- 	./MIDDLE PART	-->
-
 	</section>
-
 	<!-- 	Footer 	-->
 	<footer class="footer bg-black" id="footer">
 		<p><small>An <a href="../">Active Foresight</a> &copy;2014 application</small></p>
 	</footer><!-- 	./footer 	-->
+
+</section>
 
 	<!-- 	jQuery (1.10.2) 	-->
 	<script src="../packages/todo-tpl/js/jquery.min.js"></script>
