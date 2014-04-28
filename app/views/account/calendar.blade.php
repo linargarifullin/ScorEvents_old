@@ -11,7 +11,7 @@
     </header>
     <section class="wrapper">
       <div class="text-center clearfix">
-        <a href="#" class="btn btn-success m-b-lg"><i class="fa fa-plus"></i> Create project</a>
+        <a href="#" class="btn btn-success m-b-lg"><i class="fa fa-plus"></i> Create Event</a>
       </div>
       <div id="calendar" class="m-t-lg">
 

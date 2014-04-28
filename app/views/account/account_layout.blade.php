@@ -127,9 +127,9 @@
 											</a>
 										</li>
 
-										<li {{ Request::is('account/events') ? 'class="active"' : '' }}>
-											<a href="../account/events" title="Go to Events">
-												<i class="fa fa-calendar"></i><span>Events</span>
+										<li {{ Request::is('account/calendar') ? 'class="active"' : '' }}>
+											<a href="../account/calendar" title="Go to Calendar">
+												<i class="fa fa-calendar"></i><span>Calendar</span>
 											</a>
 										</li>
 										

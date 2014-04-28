@@ -43,12 +43,12 @@ class AccountController extends BaseController
 
 
 	/**
-	 * 	EVENTS
+	 * 	CALENDAR
 	 */
-	public function getEvents()
+	public function getCalendar()
 	{
-		return View::make('account/events', [
-			'page_title' 	=> 'Events',
+		return View::make('account/Calendar', [
+			'page_title' 	=> 'My Calendar',
 			'user' 			=> $this->user
 		]);
 	}
