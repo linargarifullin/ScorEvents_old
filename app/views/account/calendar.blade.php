@@ -151,7 +151,7 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Start Date</label>
 						<div class="col-sm-10">
-							<input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="12-02-2013" data-date-format="dd-mm-yyyy">
+							<input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="28-04-2014" data-date-format="dd-mm-yyyy">
 						</div>
 					</div>
 
@@ -159,7 +159,7 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label">End Date</label>
 						<div class="col-sm-10">
-							<input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="12-02-2013" data-date-format="dd-mm-yyyy">
+							<input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="28-04-2014" data-date-format="dd-mm-yyyy">
 						</div>
 					</div>
 
