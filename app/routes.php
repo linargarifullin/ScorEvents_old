@@ -13,8 +13,7 @@ Route::get('/', function()
 /**
  * User Authentication
  */
-Route::get('auth', function()
-{
+Route::get('auth', function() {
 	return Redirect::to('../auth/login');
 });
 Route::controller('auth', 'AuthController');
@@ -24,8 +23,7 @@ Route::controller('auth', 'AuthController');
 /**
  * Account Home
  */
-Route::get('account', function()
-{
+Route::get('account', function() {
 	return Redirect::to('../account/dashboard');
 });
 Route::controller('account', 'AccountController');
@@ -35,7 +33,6 @@ Route::controller('account', 'AccountController');
 /**
  * Test case (ignore!)
  */
-Route::get('test', function()
-{
+Route::get('test', function() {
 	die('<br>completed.');
 });

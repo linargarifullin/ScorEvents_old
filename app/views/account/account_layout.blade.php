@@ -22,7 +22,7 @@
 	<link rel="stylesheet" href="../css/account.css" type="text/css" />
 	@yield('custom_css')
 	<!-- 	 Favicon 	 	-->
-	<link rel="icon" href="../img/favicon.png"  type="image/png" />
+	<link rel="icon" href="../img/favicon.png" type="image/png" />
 
 	<!--[if lt IE 9]>
 	<script src="../packages/todo-tpl/js/ie/respond.min.js" cache="false"></script>
