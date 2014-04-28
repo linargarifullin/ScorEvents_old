@@ -47,7 +47,7 @@ class AccountController extends BaseController
 	 */
 	public function getCalendar()
 	{
-		return View::make('account/Calendar', [
+		return View::make('account/calendar', [
 			'page_title' 	=> 'My Calendar',
 			'user' 			=> $this->user
 		]);
