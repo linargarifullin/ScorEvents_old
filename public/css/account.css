@@ -24,6 +24,11 @@ nav.nav-primary ul.nav li a i.fa {
 	width: auto;
 }
 
+/* No border on top of the calendar */
+.calendar tbody {
+	border: none !important;
+}
+
 /**
  * Fixes the issue when the page becomes misaligned
  * because the user's full name is too long.

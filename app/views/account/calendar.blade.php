@@ -1,5 +1,9 @@
 @extends('account/account_layout')
 
+@section('custom_css')
+<link rel="stylesheet" href="../packages/todo-tpl/js/calendar/bootstrap_calendar.css" type="text/css" cache="false">
+@stop
+
 @section('content')
 
 <section class="hbox stretch bg-white-only">
@@ -206,5 +210,14 @@
   </section>
 </aside>
 </section>
+
+@stop
+
+@section('custom_js')
+
+    <!-- Calendar -->
+    <script src="../packages/todo-tpl/js/calendar/bootstrap_calendar.js" cache="false"></script>
+    <script src="../packages/todo-tpl/js/calendar/demo.js" cache="false"></script>
+    <script src="../packages/todo-tpl/js/libs/jquery.pjax.js" cache="false"></script>
 
 @stop

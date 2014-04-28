@@ -20,7 +20,7 @@
 	<!-- 	Native CSS 		-->
 	<link rel="stylesheet" href="../css/main.css" type="text/css" />
 	<link rel="stylesheet" href="../css/account.css" type="text/css" />
-
+	@yield('custom_css')
 	<!-- 	 Favicon 	 	-->
 	<link rel="icon" href="../img/favicon.png"  type="image/png" />
 
@@ -185,18 +185,19 @@
 	<footer class="footer bg-black" id="footer">
 		<p><small>An <a href="../">Active Foresight</a> &copy;2014 application</small></p>
 	</footer><!-- 	./footer 	-->
-
 </section>
 
-	<!-- 	jQuery (1.10.2) 	-->
-	<script src="../packages/todo-tpl/js/jquery.min.js"></script>
-	<!-- 	Bootstrap (3.1.1) 	-->
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-	<!-- 	App 	-->
-	<script src="../packages/todo-tpl/js/app.js"></script>
-	<script src="../packages/todo-tpl/js/app.plugin.js"></script>
-	<script src="../packages/todo-tpl/js/app.data.js"></script>
-	<script src="../packages/todo-tpl/js/slimscroll/jquery.slimscroll.min.js" cache="false"></script>
+<!-- 	jQuery (1.10.2) 	-->
+<script src="../packages/todo-tpl/js/jquery.min.js"></script>
+<!-- 	Bootstrap (3.1.1) 	-->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<!-- 	App 	-->
+<script src="../packages/todo-tpl/js/app.js"></script>
+<script src="../packages/todo-tpl/js/app.plugin.js"></script>
+<script src="../packages/todo-tpl/js/app.data.js"></script>
+<script src="../packages/todo-tpl/js/slimscroll/jquery.slimscroll.min.js" cache="false"></script>
+@yield('custom_js')
+
 
 </body>
 </html>
