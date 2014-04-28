@@ -51,10 +51,6 @@ ul.navbar-right #user-full-name {
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
-
-	ul.dropdown-menu.animated {
-		margin: 10px 0px;
-	}
 }
 
 footer#footer a {
