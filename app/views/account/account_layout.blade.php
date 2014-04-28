@@ -37,7 +37,7 @@
 		<header class="header bg-black navbar pull-in">
 
 			<!-- 	Top LEFT or for extra small screens 	-->
-			<div class="navbar-header nav-bar aside dk">
+			<div class="navbar-header nav-bar aside">
 				<!-- 	Top LEFT menu 	-->
 				<a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-primary">
 					<i class="fa fa-bars"></i>
@@ -84,7 +84,7 @@
 							<b class="caret"></b>
 						</a>
 
-						<ul class="dropdown-menu animated fadeInLeft aside-md">
+						<ul class="dropdown-menu animated aside-md">
 							<li><a href="../account/profile">Profile</a></li>
 							<li><a href="../auth/logout">Logout</a></li>
 						</ul>
@@ -115,34 +115,46 @@
 												<b class="caret"></b>
 											</a>
 
-											<ul class="dropdown-menu animated fadeInLeft aside-md">
+											<ul class="dropdown-menu animated">
 												<li><a href="../account/profile">Profile</a></li>
 												<li><a href="../auth/logout">Logout</a></li>
 											</ul>
 										</li>
 
 										<li {{ Request::is('account/dashboard') ? 'class="active"' : '' }}>
-											<a href="../account/dashboard"><i class="fa fa-list-alt"></i><span>Dashboard</span></a>
+											<a href="../account/dashboard" title="Go to Dashboard">
+												<i class="fa fa-list-alt"></i><span>Dashboard</span>
+											</a>
 										</li>
 
 										<li {{ Request::is('account/events') ? 'class="active"' : '' }}>
-											<a href="../account/events"><i class="fa fa-calendar"></i><span>Events</span></a>
+											<a href="../account/events" title="Go to Events">
+												<i class="fa fa-calendar"></i><span>Events</span>
+											</a>
 										</li>
 										
 										<li {{ Request::is('account/friends') ? 'class="active"' : '' }}>
-											<a href="../account/friends"><i class="fa fa-group"></i><span>Friends</span></a>
+											<a href="../account/friends" title="Go to Friends">
+												<i class="fa fa-group"></i><span>Friends</span>
+											</a>
 										</li>
 										
 										<li>
-											<a href=".#"><i class="fa fa-map-marker"></i><span>Map</span></a>
+											<a href=".#" title="Go to Map">
+												<i class="fa fa-map-marker"></i><span>Map</span>
+											</a>
 										</li>
 										
 										<li {{ Request::is('account/profile') ? 'class="active"' : '' }}>
-											<a href="../account/profile"><i class="fa fa-user"></i><span>Profile</span></a>
+											<a href="../account/profile" title="Go to Profile">
+												<i class="fa fa-user"></i><span>Profile</span>
+											</a>
 										</li>
 										
 										<li {{ Request::is('account/settings') ? 'class="active"' : '' }}>
-											<a href="../account/settings"><i class="fa fa-cogs"></i><span>Settings</span></a>
+											<a href="../account/settings" title="Go to Settings">
+												<i class="fa fa-cogs"></i><span>Settings</span>
+											</a>
 										</li>
 								
 									</ul>
@@ -152,11 +164,11 @@
 
 						<!-- 	Left menu footer (shrink & fullscreen) 	-->
 						<footer class="footer bg-gradient hidden-xs">
-							<a href="#" data-toggle="fullscreen" class="btn btn-sm btn-link m-l-n-sm">
+							<a href="#" data-toggle="fullscreen" class="btn btn-sm btn-link m-l-n-sm" title="Full Screen">
 								<i class="fa fa-expand pull-left"></i>
 							</a>
 
-							<a href="#nav" data-toggle="class:nav-vertical" class="btn btn-sm btn-link m-l-n-sm">
+							<a href="#nav" data-toggle="class:nav-vertical" class="btn btn-sm btn-link m-l-n-sm" title="Fold/Unfold Menu">
 								<i class="fa fa-toggle-left pull-left"></i>
 							</a>
 						</footer>
@@ -173,8 +185,8 @@
 		</section>
 
 		<!-- 	Footer 	-->
-		<footer class="footer bg-dark">
-			<p><small>An <a href="../" id="footer">Active Foresight</a> &copy;2014 application</small></p>
+		<footer class="footer bg-black" id="footer">
+			<p><small>An <a href="../">Active Foresight</a> &copy;2014 application</small></p>
 		</footer><!-- 	./footer 	-->
 	</section>
 

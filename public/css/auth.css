@@ -1,9 +1,9 @@
 
 /* ScorEvents sign */
 a.nav-brand {
-margin-top: 60px;
-font-size: 40px;
-color: gray;
+	margin-top: 60px;
+	font-size: 40px;
+	color: gray;
 }
 	/* ScorEvents logo */
 	a.nav-brand img {
@@ -108,5 +108,4 @@ label {
 
 footer {
 	margin-top: 20px;
-	padding: 10px 20px;
 }

@@ -81,13 +81,7 @@
 
 	<!-- footer -->
 	<footer id="footer">
-		<div class="text-center padder clearfix">
-			<p>
-				<small>
-					An <a href="../" id="footer">Active Foresight</a> &copy;2014 application
-				</small>
-			</p>
-		</div>
+		<p><small>An <a href="../">Active Foresight</a> &copy;2014 application</small></p>
 	</footer><!-- 	./footer 	-->
 
 	<!-- 	jQuery (1.10.2) 	-->

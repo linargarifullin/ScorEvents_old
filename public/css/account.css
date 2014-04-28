@@ -1,9 +1,3 @@
-
-
-header {
-	height: 50px;
-}
-
 a.nav-brand {
 	letter-spacing: 1px;
 	font-size: 20px;
@@ -29,10 +23,17 @@ nav.nav-primary ul.nav li a i.fa {
 	width: auto;
 }
 
-div#user-full-name {
-	max-width: 160px;
+/**
+ * Fixes the issue when the page becomes misaligned
+ * because the user's full name is too long.
+ */
+ul.navbar-right #user-full-name {
+	width: 142px;
+}
+
+#user-full-name {
 	display: inline-block;
-	height: 15px;
+	height: auto;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -43,14 +44,20 @@ div#user-full-name {
 		min-width: 20px;
 	}
 
-	div#user-full-name {
+	#user-full-name {
 		max-width: 80%;
 		display: inline-block;
-		height: 15px;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
+
+	ul.dropdown-menu.animated {
+		margin: 10px 0px;
+	}
 }
 
-
+footer#footer a {
+	color: white !important;
+	text-decoration: underline;
+}

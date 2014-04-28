@@ -19,7 +19,7 @@ class AccountController extends BaseController
 		// Have to include this condition, because at this point Laravel doesn't know that filters are in place
 		if (Auth::check())
 		{
-			// Join records from both [users] and [user_info] tables into one array
+			// Join records from both [users] and [user_info] tables into one array $this->user
 			$this->user = array_merge(
 				User::find(Auth::user()->id)->toArray(),
 				User::find(Auth::user()->id)->userInfo->toArray()
