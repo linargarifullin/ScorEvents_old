@@ -49,8 +49,17 @@ class AccountController extends BaseController
 	{
 		return View::make('account/calendar', [
 			'page_title' 	=> 'My Calendar',
-			'user' 			=> $this->user
+			'user' 			=> $this->user,
+			'statuses' 		=> DB::table('event_status')->get()
 		]);
+	}
+
+
+	public function postCalendar()
+	{
+		$input = Input::all();
+		var_dump($input);
+		die('<br>done!');
 	}
 
 

@@ -154,7 +154,7 @@
 <aside class="" id="right-side">
 	<section class="vbox">
 		<section class="scrollable">
-			<section class="panel" style="border-left: none; border-bottom: none; height: auto; margin-bottom: 0px;">
+			<section class="panel hidden" style="border-left: none; border-bottom: none; height: auto; margin-bottom: 0px;">
 
 				<!-- 	Header 	-->
 				<header class="panel-heading pos-rlt font-bold" style="font-size: 18px;">
@@ -164,6 +164,7 @@
 				<div class="panel-body">
 
 					{{ Form::open(['class' => 'form-horizontal', 'url' => '../account/calendar', 'autocomplete' => 'on']) }}
+
 						<!-- 	Title 	-->
 						<div class="form-group">
 							<label class="col-sm-2 control-label">Title</label>
@@ -270,7 +271,7 @@
 						<div class="form-group">
 							<label class="col-sm-2 control-label">State</label>
 							<div class="col-sm-10">
-									<select class="form-control m-b" style="width:180px">
+									<select class="form-control m-b" name="state" style="width:180px" tabindex="13">
 										<optgroup label="Alaskan/Hawaiian Time Zone">
 											<option value="AK">Alaska</option>
 											<option value="HI">Hawaii</option>
@@ -338,243 +339,42 @@
 						<!-- 	Zip 	-->
 						<div class="form-group">
 							<label class="col-sm-2 control-label">Zip</label>
-							<div class="col-sm-10"><input type="text" class="form-control m-b" style="width: 70px;"></div>
+							<div class="col-sm-10">
+								<input type="text" class="form-control m-b" name="zip" tabindex="14" style="width: 70px;">
+							</div>
 						</div>
 
 						<div class="line line-dashed line-lg pull-in"></div>
 
 						<!-- 	Age Limits 	-->
 						<div class="form-group">
-							<label class="col-sm-2 control-label">Age Limits</label>
-							<div class="col-sm-1">
-								<div class="m-b m-t-sm">
-									<select id="select2-option">
-										<option value="none">none</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>
-										<option value="7">7</option>
-										<option value="8">8</option>
-										<option value="9">9</option>
-										<option value="10">10</option>
-										<option value="11">11</option>
-										<option value="12">12</option>
-										<option value="13">13</option>
-										<option value="14">14</option>
-										<option value="15">15</option>
-										<option value="16">16</option>
-										<option value="17">17</option>
-										<option value="18">18</option>
-										<option value="19">19</option>
-										<option value="20">20</option>
-										<option value="21">21</option>
-										<option value="22">22</option>
-										<option value="23">23</option>
-										<option value="24">24</option>
-										<option value="25">25</option>
-										<option value="26">26</option>
-										<option value="27">27</option>
-										<option value="28">28</option>
-										<option value="29">29</option>
-										<option value="30">30</option>
-										<option value="31">31</option>
-										<option value="32">32</option>
-										<option value="33">33</option>
-										<option value="34">34</option>
-										<option value="35">35</option>
-										<option value="36">36</option>
-										<option value="37">37</option>
-										<option value="38">38</option>
-										<option value="39">39</option>
-										<option value="30">30</option>
-										<option value="31">31</option>
-										<option value="32">32</option>
-										<option value="33">33</option>
-										<option value="34">34</option>
-										<option value="35">35</option>
-										<option value="36">36</option>
-										<option value="37">37</option>
-										<option value="38">38</option>
-										<option value="39">39</option>
-										<option value="40">40</option>
-										<option value="41">41</option>
-										<option value="42">42</option>
-										<option value="43">43</option>
-										<option value="44">44</option>
-										<option value="45">45</option>
-										<option value="46">46</option>
-										<option value="47">47</option>
-										<option value="48">48</option>
-										<option value="49">49</option>
-										<option value="50">50</option>
-										<option value="51">51</option>
-										<option value="52">52</option>
-										<option value="53">53</option>
-										<option value="54">54</option>
-										<option value="55">55</option>
-										<option value="56">56</option>
-										<option value="57">57</option>
-										<option value="58">58</option>
-										<option value="59">59</option>
-										<option value="60">60</option>
-										<option value="61">61</option>
-										<option value="62">62</option>
-										<option value="63">63</option>
-										<option value="64">64</option>
-										<option value="65">65</option>
-										<option value="66">66</option>
-										<option value="67">67</option>
-										<option value="68">68</option>
-										<option value="69">69</option>
-										<option value="70">70</option>
-										<option value="71">71</option>
-										<option value="72">72</option>
-										<option value="73">73</option>
-										<option value="74">74</option>
-										<option value="75">75</option>
-										<option value="76">76</option>
-										<option value="77">77</option>
-										<option value="78">78</option>
-										<option value="79">79</option>
-										<option value="80">80</option>
-										<option value="81">81</option>
-										<option value="82">82</option>
-										<option value="83">83</option>
-										<option value="84">84</option>
-										<option value="85">85</option>
-										<option value="86">86</option>
-										<option value="87">87</option>
-										<option value="88">88</option>
-										<option value="89">89</option>
-										<option value="90">90</option>
-									</select>
-								</div>
-							</div>
-							<label class="col-sm-1 control-lavel m-t-sm m-l-lg"> through </label>
-							<div class="col-sm-1 m-l-lg">
-								<div class="m-b m-t-sm">
-									<select id="select2-option">
-										<option value="none">none</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>
-										<option value="7">7</option>
-										<option value="8">8</option>
-										<option value="9">9</option>
-										<option value="10">10</option>
-										<option value="11">11</option>
-										<option value="12">12</option>
-										<option value="13">13</option>
-										<option value="14">14</option>
-										<option value="15">15</option>
-										<option value="16">16</option>
-										<option value="17">17</option>
-										<option value="18">18</option>
-										<option value="19">19</option>
-										<option value="20">20</option>
-										<option value="21">21</option>
-										<option value="22">22</option>
-										<option value="23">23</option>
-										<option value="24">24</option>
-										<option value="25">25</option>
-										<option value="26">26</option>
-										<option value="27">27</option>
-										<option value="28">28</option>
-										<option value="29">29</option>
-										<option value="30">30</option>
-										<option value="31">31</option>
-										<option value="32">32</option>
-										<option value="33">33</option>
-										<option value="34">34</option>
-										<option value="35">35</option>
-										<option value="36">36</option>
-										<option value="37">37</option>
-										<option value="38">38</option>
-										<option value="39">39</option>
-										<option value="30">30</option>
-										<option value="31">31</option>
-										<option value="32">32</option>
-										<option value="33">33</option>
-										<option value="34">34</option>
-										<option value="35">35</option>
-										<option value="36">36</option>
-										<option value="37">37</option>
-										<option value="38">38</option>
-										<option value="39">39</option>
-										<option value="40">40</option>
-										<option value="41">41</option>
-										<option value="42">42</option>
-										<option value="43">43</option>
-										<option value="44">44</option>
-										<option value="45">45</option>
-										<option value="46">46</option>
-										<option value="47">47</option>
-										<option value="48">48</option>
-										<option value="49">49</option>
-										<option value="50">50</option>
-										<option value="51">51</option>
-										<option value="52">52</option>
-										<option value="53">53</option>
-										<option value="54">54</option>
-										<option value="55">55</option>
-										<option value="56">56</option>
-										<option value="57">57</option>
-										<option value="58">58</option>
-										<option value="59">59</option>
-										<option value="60">60</option>
-										<option value="61">61</option>
-										<option value="62">62</option>
-										<option value="63">63</option>
-										<option value="64">64</option>
-										<option value="65">65</option>
-										<option value="66">66</option>
-										<option value="67">67</option>
-										<option value="68">68</option>
-										<option value="69">69</option>
-										<option value="70">70</option>
-										<option value="71">71</option>
-										<option value="72">72</option>
-										<option value="73">73</option>
-										<option value="74">74</option>
-										<option value="75">75</option>
-										<option value="76">76</option>
-										<option value="77">77</option>
-										<option value="78">78</option>
-										<option value="79">79</option>
-										<option value="80">80</option>
-										<option value="81">81</option>
-										<option value="82">82</option>
-										<option value="83">83</option>
-										<option value="84">84</option>
-										<option value="85">85</option>
-										<option value="86">86</option>
-										<option value="87">87</option>
-										<option value="88">88</option>
-										<option value="89">89</option>
-										<option value="90">90</option>
-									</select>
-								</div>
+							<label class="col-sm-2 control-label">Age Limit</label>
+							<div class="col-sm-10">
+								<select class="form-control m-b inline" name="age_min" tabindex="15" style="width: auto;">
+									<option value="">Min</option>
+									@for ($i = 0; $i < 100; $i++)
+										<option value="{{ $i }}">{{ $i }}</option>
+									@endfor
+								</select>
+								&nbsp;&nbsp;-&nbsp;&nbsp;
+								<select class="form-control m-b inline" name="age_max" tabindex="16" style="width: auto;">
+									<option value="">Max</option>
+									@for ($i = 0; $i < 100; $i++)
+										<option value="{{ $i }}">{{ $i }}</option>
+									@endfor
+								</select>
 							</div>
 						</div>
-
-						<div class="line line-dashed line-lg pull-in"></div>
 
 						<!-- 	Status 	-->
 						<div class="form-group">
 							<label class="col-sm-2 control-label">Status</label>
-							<div class="col-sm-6">
-								<div class="m-b m-t-sm">
-									<select id="select2-option">
-										<option value="1">Private</option>
-										<option value="">Public</option>
-									</select>
-								</div>
+							<div class="col-sm-10">
+								<select class="form-control m-b" name="status" tabindex="17" style="width: auto;">
+									@foreach ($statuses as $status)
+										<option value="{{ $status->status_id }}">{{ $status->title }}</option>
+									@endforeach
+								</select>
 							</div>
 						</div>
 

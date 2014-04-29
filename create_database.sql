@@ -103,8 +103,8 @@ CREATE TABLE `event_status` (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 INSERT INTO `event_status` (`title`) VALUES 
-	('private'),
-	('public');
+	('Private'),
+	('Public');
 
 
 -- ------------------ --
