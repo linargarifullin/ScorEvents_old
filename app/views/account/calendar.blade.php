@@ -7,7 +7,14 @@
 	<link rel="stylesheet" href="../packages/todo-tpl/js/slider/slider.css" type="text/css" />
 
 	<style>
-		input.datepicker-input { width: 120px; }
+		input.datepicker-input {
+			width: 120px;
+		}
+
+		select {
+			height: 30px !important;
+			line-height: 30px !important;
+		}
 
 		/* (extra small) */
 		@media (max-width: 767px) {
@@ -20,8 +27,6 @@
 			}
 			
 			select {
-				height: 30px !important;
-				line-height: 30px !important;
 				font-size: 11px !important;
 			}
 			
@@ -37,7 +42,7 @@
 
 <!-- 	aside (left) 	-->
 <aside class="aside bg-white-only aside-lg b-r">
-	<header class="header text-center"><p class="h4 font-bold">{{ $page_title }}</p></header>
+	<header class="header text-center"><p class="h4">{{ $page_title }}</p></header>
 
 	<section class="wrapper">
 
@@ -152,7 +157,7 @@
 			<section class="panel hidden" style="border-left: none; border-bottom: none; height: auto; margin-bottom: 0px;">
 
 				<!-- 	Header 	-->
-				<header class="panel-heading pos-rlt" style="font-size: 18px;">
+				<header class="panel-heading pos-rlt font-bold" style="font-size: 18px;">
 					<span class="arrow left"></span>New Event
 				</header>
 
