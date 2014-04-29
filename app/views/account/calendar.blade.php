@@ -182,7 +182,7 @@
 								<input class="datepicker-input form-control inline" size="16" type="text" value="04-28-2014" data-date-format="mm-dd-yyyy" name="start_date" tabindex="3" />
 
 								<!-- 	Time 	-->
-								<span>&nbsp;&nbsp;-&nbsp;&nbsp;
+								<span>&nbsp;-&nbsp;
 									<!-- 	HH 	-->
 									<select class="hour form-control inline" name="start_hour" tabindex="4" style="width: auto;">
 										<option value="12">12</option>
@@ -215,7 +215,7 @@
 								<input class="datepicker-input form-control inline" size="16" type="text" value="04-28-2014" data-date-format="mm-dd-yyyy" name="end_date" tabindex="7" />
 
 								<!-- 	Time 	-->
-								<span>&nbsp;&nbsp;-&nbsp;&nbsp;
+								<span>&nbsp;-&nbsp;
 									<!-- 	HH 	-->
 									<select class="hour form-control inline" name="end_hour" tabindex="8" style="width: auto;">
 										<option value="12">12</option>
