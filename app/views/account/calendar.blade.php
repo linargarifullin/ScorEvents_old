@@ -13,7 +13,7 @@
 		@media (max-width: 767px) {
 			input {
 				height: 30px !important;
-				padding: 5px 15px !important;
+				padding: 5px 10px !important;
 				font-size: 11px !important;
 				line-height: 1.5 !important;
 				border-radius: 3px !important;
@@ -28,7 +28,7 @@
 			textarea,
 			select[multiple] { height: auto; }
 
-			input.datepicker-input { width: 85px; }
+			input.datepicker-input { width: 90px; }
 		}
   </style>
 @stop
