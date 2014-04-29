@@ -267,38 +267,10 @@
 						</div>
 
 						<!-- 	State 	-->
-						<div class="btn-group m-r">
-							<button data-toggle="dropdown" class="btn btn-sm btn-white dropdown-toggle">
-								<span class="dropdown-label" data-placeholder="Please select">Please select</span> 
-								<span class="caret"></span>
-							</button>
-							
-							<ul class="dropdown-menu dropdown-select" style="max-height: 100px; overflow: scroll;">
-								<li><a href="#"><input type="checkbox" name="d-s-c-1">Option1</a></li>
-								<li><a href="#"><input type="checkbox" name="d-s-c-2">Option2</a></li>
-								<li><a href="#"><input type="checkbox" name="d-s-c-3">Option3</a></li>
-								<li><a href="#"><input type="checkbox" name="d-s-c-4">Option4</a></li>
-								<li><a href="#"><input type="checkbox" name="d-s-c-5">Option5</a></li>
-								<li><a href="#"><input type="checkbox" name="d-s-c-1">Option1</a></li>
-								<li><a href="#"><input type="checkbox" name="d-s-c-2">Option2</a></li>
-								<li><a href="#"><input type="checkbox" name="d-s-c-3">Option3</a></li>
-								<li><a href="#"><input type="checkbox" name="d-s-c-4">Option4</a></li>
-								<li><a href="#"><input type="checkbox" name="d-s-c-5">Option5</a></li>
-								<li><a href="#"><input type="checkbox" name="d-s-c-1">Option1</a></li>
-								<li><a href="#"><input type="checkbox" name="d-s-c-2">Option2</a></li>
-								<li><a href="#"><input type="checkbox" name="d-s-c-3">Option3</a></li>
-								<li><a href="#"><input type="checkbox" name="d-s-c-4">Option4</a></li>
-								<li><a href="#"><input type="checkbox" name="d-s-c-5">Option5</a></li>
-							</ul>
-						</div>
-
-
-						<!-- 	State 	-->
 						<div class="form-group">
 							<label class="col-sm-2 control-label">State</label>
 							<div class="col-sm-10">
-								<div class="m-b m-t-sm">
-									<select id="select2-option" style="width:260px">
+									<select class="form-control m-b" style="width:180px">
 										<optgroup label="Alaskan/Hawaiian Time Zone">
 											<option value="AK">Alaska</option>
 											<option value="HI">Hawaii</option>
@@ -360,9 +332,7 @@
 											<option value="WV">West Virginia</option>
 										</optgroup>
 									</select>
-								</div>
 							</div>
-							<input type="hidden" id="select2-tags" style="width:260px" value="brown"/>
 						</div>
 
 						<!-- 	Zip 	-->
