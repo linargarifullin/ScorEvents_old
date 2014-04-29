@@ -11,6 +11,13 @@ a.nav-brand img {
 	max-width: 30px;
 }
 
+/* col-xs (extra small) */
+@media (max-width: 767px) {
+	#site_title {
+		display: inline !important;
+	}
+}
+
 li.dropdown {
 	word-wrap: break-word;
 }
@@ -34,7 +41,7 @@ nav.nav-primary ul.nav li a i.fa {
  * because the user's full name is too long.
  */
 ul.navbar-right #user-full-name {
-	width: 142px;
+	max-width: 120px;
 	height: 15px;
 }
 

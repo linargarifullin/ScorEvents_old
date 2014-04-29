@@ -154,7 +154,7 @@
 <aside class="" id="right-side">
 	<section class="vbox">
 		<section class="scrollable">
-			<section class="panel hidden" style="border-left: none; border-bottom: none; height: auto; margin-bottom: 0px;">
+			<section class="panel" style="border-left: none; border-bottom: none; height: auto; margin-bottom: 0px;">
 
 				<!-- 	Header 	-->
 				<header class="panel-heading pos-rlt font-bold" style="font-size: 18px;">
@@ -179,6 +179,8 @@
 								<textarea class="form-control m-b" tabindex="2" name="e_descr" style="max-width: 100% !important; height: 75px; max-height: 75px;"></textarea>
 							</div>
 						</div>
+
+						<div class="line line-dashed line-lg pull-in"></div>
 
 						<!-- 	Starts 	-->
 						<div class="form-group">
@@ -263,6 +265,33 @@
 								<input type="text" name="city" class="form-control m-b" tabindex="12" />
 							</div>
 						</div>
+
+						<!-- 	State 	-->
+						<div class="btn-group m-r">
+							<button data-toggle="dropdown" class="btn btn-sm btn-white dropdown-toggle">
+								<span class="dropdown-label" data-placeholder="Please select">Please select</span> 
+								<span class="caret"></span>
+							</button>
+							
+							<ul class="dropdown-menu dropdown-select">
+								<li><a href="#"><input type="checkbox" name="d-s-c-1">Option1</a></li>
+								<li><a href="#"><input type="checkbox" name="d-s-c-2">Option2</a></li>
+								<li><a href="#"><input type="checkbox" name="d-s-c-3">Option3</a></li>
+								<li><a href="#"><input type="checkbox" name="d-s-c-4">Option4</a></li>
+								<li><a href="#"><input type="checkbox" name="d-s-c-5">Option5</a></li>
+								<li><a href="#"><input type="checkbox" name="d-s-c-1">Option1</a></li>
+								<li><a href="#"><input type="checkbox" name="d-s-c-2">Option2</a></li>
+								<li><a href="#"><input type="checkbox" name="d-s-c-3">Option3</a></li>
+								<li><a href="#"><input type="checkbox" name="d-s-c-4">Option4</a></li>
+								<li><a href="#"><input type="checkbox" name="d-s-c-5">Option5</a></li>
+								<li><a href="#"><input type="checkbox" name="d-s-c-1">Option1</a></li>
+								<li><a href="#"><input type="checkbox" name="d-s-c-2">Option2</a></li>
+								<li><a href="#"><input type="checkbox" name="d-s-c-3">Option3</a></li>
+								<li><a href="#"><input type="checkbox" name="d-s-c-4">Option4</a></li>
+								<li><a href="#"><input type="checkbox" name="d-s-c-5">Option5</a></li>
+							</ul>
+						</div>
+
 
 						<!-- 	State 	-->
 						<div class="form-group">
@@ -562,21 +591,6 @@
 									</select>
 								</div>
 							</div>
-						</div>
-
-						<div class="btn-group m-r">
-							<button data-toggle="dropdown" class="btn btn-sm btn-white dropdown-toggle">
-								<span class="dropdown-label" data-placeholder="Please select">Please select</span> 
-								<span class="caret"></span>
-							</button>
-							
-							<ul class="dropdown-menu dropdown-select">
-								<li><a href="#"><input type="checkbox" name="d-s-c-1">Option1</a></li>
-								<li><a href="#"><input type="checkbox" name="d-s-c-2">Option2</a></li>
-								<li><a href="#"><input type="checkbox" name="d-s-c-3">Option3</a></li>
-								<li><a href="#"><input type="checkbox" name="d-s-c-4">Option4</a></li>
-								<li><a href="#"><input type="checkbox" name="d-s-c-5">Option5</a></li>
-							</ul>
 						</div>
 
 						<div class="line line-dashed line-lg pull-in"></div>

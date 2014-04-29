@@ -45,9 +45,9 @@
 				</a>
 
 				<!-- 	Logo & Title 	-->
-				<a href="../" class="nav-brand">
+				<a href="../" class="nav-brand" data-toggle="fullscreen" title="Fullscreen Mode">
 					<img src="../img/logo_60x60.png" alt="ScorEvents">
-					<span id="site_title" class="hidden">{{ Config::get('constants.site_title') }}</span>
+					<span id="site_title" class="visible-xs">{{ Config::get('constants.site_title') }}</span>
 				</a>
 
 				<!-- 	TOP (right) menu for XS 	-->
@@ -71,6 +71,7 @@
 
 							<ul class="dropdown-menu animated">
 								<li><a href="../account/profile">Profile</a></li>
+								<li><a href="../account/settings">Settings</a></li>
 								<li><a href="../auth/logout">Logout</a></li>
 							</ul>
 						</li>
@@ -98,7 +99,7 @@
 
 						<!-- 	Map 	-->
 						<li>
-							<a href=".#" title="Go to Map">
+							<a href="../" title="Go to Map">
 								<i class="fa fa-map-marker"></i><span>Map</span>
 							</a>
 						</li>
@@ -122,26 +123,19 @@
 
 			</section>
 
-			<!-- 	nav footer (shrink & fullscreen) 	-->
-			<footer class="footer bg-gradient hidden-xs">
-				<a href="#" data-toggle="fullscreen" class="btn btn-sm btn-link m-l-n-sm" title="Full Screen">
-					<i class="fa fa-expand"></i>
-				</a>
-
-				<a href="#nav" id="foldMenu" data-toggle="class:nav-vertical" class="btn btn-sm btn-link m-l-n-sm pull-right" title="Fold/Unfold Menu">
-					<i class="fa fa-caret-square-o-right"></i>
-					<i class="fa fa-caret-square-o-left hidden"></i>
-				</a>
-			</footer>
-
 		</section><!-- 	/.vbox 	-->
 	</aside><!-- 	/aside 	-->
 
 	<!-- 	#content 	-->
 	<section id="content">
 		<section class="vbox">
-			<header class="header bg-black lter navbar navbar-inverse">
+			<header class="header bg-black navbar navbar-inverse">
 				<div class="collapse navbar-collapse pull-in">
+					<ul class="nav navbar-nav m-l-n">
+						<li><a href="../">Home</a></li>
+						<li><a href="../">About</a></li>
+						<li><a href="../">Contact Us</a></li>
+					</ul>
 
 					<!-- 	Search form 	-->
 					<form class="navbar-form navbar-left m-t-sm" id="searchbar" role="search">
@@ -168,6 +162,7 @@
 
 							<ul class="dropdown-menu animated aside-md">
 								<li><a href="../account/profile">Profile</a></li>
+								<li><a href="../account/settings">Settings</a></li>
 								<li><a href="../auth/logout">Logout</a></li>
 							</ul>
 						</li>
@@ -196,13 +191,6 @@
 <script src="../packages/todo-tpl/js/app.plugin.js"></script>
 <script src="../packages/todo-tpl/js/app.data.js"></script>
 <script src="../packages/todo-tpl/js/slimscroll/jquery.slimscroll.min.js" cache="false"></script>
-
-<script type="text/javascript">
-$("a#foldMenu").click(function(){
-	$("span#site_title").toggleClass("hidden");
-	$("a#foldMenu i.fa").toggleClass("hidden");
-});
-</script>
 
 @yield('custom_js')
 
