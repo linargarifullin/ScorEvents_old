@@ -273,7 +273,7 @@
 								<span class="caret"></span>
 							</button>
 							
-							<ul class="dropdown-menu dropdown-select">
+							<ul class="dropdown-menu dropdown-select" style="max-height: 100px; overflow: scroll;">
 								<li><a href="#"><input type="checkbox" name="d-s-c-1">Option1</a></li>
 								<li><a href="#"><input type="checkbox" name="d-s-c-2">Option2</a></li>
 								<li><a href="#"><input type="checkbox" name="d-s-c-3">Option3</a></li>
