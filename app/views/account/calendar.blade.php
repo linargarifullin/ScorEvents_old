@@ -19,13 +19,13 @@
 				border-radius: 3px;
 			}
 			
-			select.input-sm {
+			select {
 				height: 30px;
 				line-height: 30px;
 			}
 			
-			textarea.input-sm,
-			select[multiple].input-sm { height: auto; }
+			textarea,
+			select[multiple] { height: auto; }
 
 			input.datepicker-input { width: 100px; }
 		}
