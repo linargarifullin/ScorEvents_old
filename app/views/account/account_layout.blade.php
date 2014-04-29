@@ -34,13 +34,13 @@
 
 <section class="hbox stretch">
 	<!-- .aside -->
-	<aside class="bg-dark dker aside-md nav-vertical" id="nav">
+	<aside class="bg-black lter aside-md nav-vertical" id="nav">
 		<section class="vbox">
 
 			<!-- 	TOP Header for XS	-->
 			<header class="bg-black nav-bar">
 				<!-- 	TOP (left) menu for XS 	-->
-				<a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-primary" title="Menu">
+				<a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-primary" id="menu" title="Menu">
 					<i class="fa fa-bars"></i>
 				</a>
 
@@ -51,7 +51,7 @@
 				</a>
 
 				<!-- 	TOP (right) menu for XS 	-->
-				<a class="btn btn-link visible-xs" data-toggle="collapse" data-target=".navbar-collapse" title="Search">
+				<a class="btn btn-link visible-xs" data-toggle="collapse" data-target=".navbar-collapse" id="search" title="Search">
 					<i class="fa fa-search"></i>
 				</a>
 			</header>
@@ -140,11 +140,11 @@
 	<!-- 	#content 	-->
 	<section id="content">
 		<section class="vbox">
-			<header class="header bg-black navbar navbar-inverse">
+			<header class="header bg-black lter navbar navbar-inverse">
 				<div class="collapse navbar-collapse pull-in">
 
 					<!-- 	Search form 	-->
-					<form class="navbar-form navbar-left m-t-sm" role="search">
+					<form class="navbar-form navbar-left m-t-sm" id="searchbar" role="search">
 						<div class="form-group">
 							<div class="input-group input-s">
 								<input type="text" class="form-control input-sm no-border bg-dark dk text-white" placeholder="Search ..." />
@@ -196,14 +196,15 @@
 <script src="../packages/todo-tpl/js/app.plugin.js"></script>
 <script src="../packages/todo-tpl/js/app.data.js"></script>
 <script src="../packages/todo-tpl/js/slimscroll/jquery.slimscroll.min.js" cache="false"></script>
+
 <script type="text/javascript">
 $("a#foldMenu").click(function(){
 	$("span#site_title").toggleClass("hidden");
 	$("a#foldMenu i.fa").toggleClass("hidden");
 });
 </script>
-@yield('custom_js')
 
+@yield('custom_js')
 
 </body>
 </html>
