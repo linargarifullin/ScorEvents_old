@@ -5,6 +5,11 @@
   <link rel="stylesheet" href="../packages/todo-tpl/js/fuelux/fuelux.css" type="text/css" />
   <link rel="stylesheet" href="../packages/todo-tpl/js/datepicker/datepicker.css" type="text/css" />
   <link rel="stylesheet" href="../packages/todo-tpl/js/slider/slider.css" type="text/css" />
+  <style>
+  	input.datepicker-input {
+  		width: 100px;
+  	}
+  </style>
 @stop
 
 @section('content')
@@ -154,7 +159,7 @@
 							<label class="col-sm-2 control-label">Starts</label>
 							<div class="col-sm-10">
 								<!-- 	Date 	-->
-								<input class="input-s datepicker-input form-control inline" size="16" type="text" value="04-28-2014" data-date-format="mm-dd-yyyy" name="start_date" tabindex="3" />
+								<input class="datepicker-input form-control inline" size="16" type="text" value="04-28-2014" data-date-format="mm-dd-yyyy" name="start_date" tabindex="3" />
 
 								<!-- 	Time 	-->
 								<span>&nbsp;&nbsp;-&nbsp;&nbsp;
@@ -187,7 +192,7 @@
 							<label class="col-sm-2 control-label">Ends</label>
 							<div class="col-sm-10">
 								<!-- 	Date 	-->
-								<input class="input-s datepicker-input form-control inline" size="16" type="text" value="04-28-2014" data-date-format="mm-dd-yyyy" name="end_date" tabindex="7" />
+								<input class="datepicker-input form-control inline" size="16" type="text" value="04-28-2014" data-date-format="mm-dd-yyyy" name="end_date" tabindex="7" />
 
 								<!-- 	Time 	-->
 								<span>&nbsp;&nbsp;-&nbsp;&nbsp;
