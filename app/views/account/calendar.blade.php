@@ -158,7 +158,7 @@
 
 				<!-- 	Header 	-->
 				<header class="panel-heading pos-rlt font-bold" style="font-size: 18px;">
-					<span class="arrow left"></span>New Event
+					New Event
 				</header>
 
 				<div class="panel-body">
