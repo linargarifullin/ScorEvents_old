@@ -12,22 +12,23 @@
 		/* (extra small) */
 		@media (max-width: 767px) {
 			input {
-				height: 30px;
+				height: 30px !important;
 				padding: 5px 5px !important;
-				font-size: 12px;
-				line-height: 1.5;
-				border-radius: 3px;
+				font-size: 11px !important;
+				line-height: 1.5 !important;
+				border-radius: 3px !important;
 			}
 			
 			select {
-				height: 30px;
-				line-height: 30px;
+				height: 30px !important;
+				line-height: 30px !important;
+				font-size: 11px !important;
 			}
 			
 			textarea,
 			select[multiple] { height: auto; }
 
-			input.datepicker-input { width: 80px; }
+			input.datepicker-input { width: 90px; }
 		}
   </style>
 @stop
@@ -189,7 +190,7 @@
 										@for ($i = 1; $i < 12; $i++)
 											<option value="{{ $i }}">{{ ($i < 10 ? '0' : '') }}{{ $i }}</option>
 										@endfor
-									</select>&nbsp;:&nbsp;
+									</select>&nbsp;:
 
 									<!-- 	mm 	-->
 									<select class="minute form-control inline" name="start_minute" tabindex="5" style="width: auto;">
@@ -222,7 +223,7 @@
 										@for ($i = 1; $i < 12; $i++)
 											<option value="{{ $i }}">{{ ($i < 10 ? '0' : '') }}{{ $i }}</option>
 										@endfor
-									</select>&nbsp;:&nbsp;
+									</select>&nbsp;:
 
 									<!-- 	mm 	-->
 									<select class="minute form-control inline" name="end_minute" tabindex="9" style="width: auto;">
