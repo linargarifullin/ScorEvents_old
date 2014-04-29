@@ -34,7 +34,7 @@
 
 <section class="hbox stretch">
 	<!-- .aside -->
-	<aside class="bg-black lter aside-md nav-vertical" id="nav">
+	<aside class="bg-black lter aside nav-vertical" id="nav">
 		<section class="vbox">
 
 			<!-- 	TOP Header for XS	-->
@@ -45,7 +45,7 @@
 				</a>
 
 				<!-- 	Logo & Title 	-->
-				<a href="#" class="nav-brand">
+				<a href="../" class="nav-brand">
 					<img src="../img/logo_60x60.png" alt="ScorEvents">
 					<span id="site_title" class="hidden">{{ Config::get('constants.site_title') }}</span>
 				</a>
@@ -146,8 +146,8 @@
 					<!-- 	Search form 	-->
 					<form class="navbar-form navbar-left m-t-sm" id="searchbar" role="search">
 						<div class="form-group">
-							<div class="input-group input-s">
-								<input type="text" class="form-control input-sm no-border bg-dark dk text-white" placeholder="Search ..." />
+							<div class="input-group input-s-lg">
+								<input type="text" class="form-control input-sm no-border bg-dark dk" placeholder="Search ..." />
 								<span class="input-group-btn">
 									<button type="submit" class="btn btn-sm btn-primary btn-icon"><i class="fa fa-search"></i></button>
 								</span>

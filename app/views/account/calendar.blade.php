@@ -48,7 +48,7 @@
 
 		<!-- 	New Event button 	-->
 		<div class="text-center clearfix">
-			<a class="btn btn-success m-b-lg"><i class="fa fa-plus"></i> New Event</a>
+			<a class="btn btn-success m-b-lg"><i class="fa fa-plus"></i>&nbsp;&nbsp;New Event</a>
 		</div>
 
 		<!-- 	Calendar 	-->
