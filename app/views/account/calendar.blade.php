@@ -28,7 +28,7 @@
 			textarea,
 			select[multiple] { height: auto; }
 
-			input.datepicker-input { width: 100px; }
+			input.datepicker-input { width: 85px; }
 		}
   </style>
 @stop
