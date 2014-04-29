@@ -1,14 +1,34 @@
 @extends('account/account_layout')
 
 @section('custom_css')
-  <link rel="stylesheet" href="../packages/todo-tpl/js/select2/select2.css" type="text/css" />
-  <link rel="stylesheet" href="../packages/todo-tpl/js/fuelux/fuelux.css" type="text/css" />
-  <link rel="stylesheet" href="../packages/todo-tpl/js/datepicker/datepicker.css" type="text/css" />
-  <link rel="stylesheet" href="../packages/todo-tpl/js/slider/slider.css" type="text/css" />
-  <style>
-  	input.datepicker-input {
-  		width: 100px;
-  	}
+	<link rel="stylesheet" href="../packages/todo-tpl/js/select2/select2.css" type="text/css" />
+	<link rel="stylesheet" href="../packages/todo-tpl/js/fuelux/fuelux.css" type="text/css" />
+	<link rel="stylesheet" href="../packages/todo-tpl/js/datepicker/datepicker.css" type="text/css" />
+	<link rel="stylesheet" href="../packages/todo-tpl/js/slider/slider.css" type="text/css" />
+
+	<style>
+		input.datepicker-input { width: 120px; }
+
+		/* (extra small) */
+		@media (max-width: 767px) {
+			input {
+				height: 30px;
+				padding: 5px 10px;
+				font-size: 12px;
+				line-height: 1.5;
+				border-radius: 3px;
+			}
+			
+			select.input-sm {
+				height: 30px;
+				line-height: 30px;
+			}
+			
+			textarea.input-sm,
+			select[multiple].input-sm { height: auto; }
+
+			input.datepicker-input { width: 100px; }
+		}
   </style>
 @stop
 
