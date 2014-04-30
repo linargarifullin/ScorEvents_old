@@ -42,7 +42,7 @@
 
 <!-- 	aside (left) 	-->
 <aside class="aside bg-white-only aside-lg b-r">
-	<header class="header text-center"><p class="h4">{{ $page_title }}</p></header>
+	<header class="header text-center m-t-lg"><p class="h4">{{ $page_title }}</p></header>
 
 	<section class="wrapper">
 
@@ -57,13 +57,12 @@
 
 				<!-- 	Calendar header 	-->
 				<table class="table header">
-					<tbody>
+					<tbody></tbody>
 						<tr>
 							<td><i class="fa fa-arrow-left"></i></td>
-							<td colspan="5" class="year span6"><div class="visualmonthyear">April 2014</div></td>
+							<td>April 2014</td>
 							<td><i class="fa fa-arrow-right"></i></td>
 						</tr>
-					</tbody>
 				</table>
 
 				<!-- 	Calendar body 	-->
@@ -132,17 +131,15 @@
 
 		<!-- 	Events for the day 	-->
 		<div class="list-group bg-white">
-			<a href="#" class="list-group-item text-ellipsis">
-				<span class="badge bg-danger">7:30</span>Meet a friend
-			</a>
-			
-			<a href="#" class="list-group-item text-ellipsis">
-				<span class="badge bg-success">9:30</span>Have a kick off meeting with .inc company
-			</a>
-			
-			<a href="#" class="list-group-item text-ellipsis">
-				<span class="badge bg-light">19:30</span>Milestone release
-			</a>
+			@if (! empty($events->get(0)))
+				@foreach ($events->all() as $event)
+					<a href="#" class="list-group-item text-ellipsis">
+						<span class="badge bg-danger">12:00</span>{{ $event['title'] }}
+					</a>
+				@endforeach
+			@else
+				<div class="text-center">No events</div>
+			@endif
 		</div>
 
 	</section><!-- 	./wrapper 	-->
@@ -151,10 +148,27 @@
 
 
 <!-- 	aside (right) 	-->
-<aside class="" id="right-side">
+<aside class="{{ $errors->any() ? 'bg-white' : '' }}" id="right-side">
 	<section class="vbox">
 		<section class="scrollable">
-			<section class="panel hidden" style="border-left: none; border-bottom: none; height: auto; margin-bottom: 0px;">
+			<section class="panel {{ $errors->any() ? '' : 'hidden' }}" style="border-left: none; border-bottom: none; height: auto; margin-bottom: 0px;">
+				<div class="row">
+					<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+
+						<!-- 	Error Messages (form) 	-->
+						@if ($errors->any())
+							<div class="form-group m-t-lg">
+								<div class="alert alert-danger">
+									<ul>
+									@foreach ($errors->all() as $error)
+										<li>{{ $error }}</li>
+									@endforeach
+									</ul>
+								</div>
+							</div>
+						@endif
+					</div>
+				</div>
 
 				<!-- 	Header 	-->
 				<header class="panel-heading pos-rlt font-bold" style="font-size: 18px;">
@@ -167,9 +181,9 @@
 
 						<!-- 	Title 	-->
 						<div class="form-group">
-							<label class="col-sm-2 control-label">Title</label>
+							<label class="col-sm-2 control-label">Title *</label>
 							<div class="col-sm-8">
-								<input type="text" name="" class="form-control m-b" tabindex="1" autofocus />
+								<input type="text" name="title" class="form-control m-b" tabindex="1" autofocus />
 							</div>
 						</div>
 
@@ -177,7 +191,7 @@
 						<div class="form-group">
 							<label class="col-sm-2 control-label">Description</label>
 							<div class="col-sm-8">
-								<textarea class="form-control m-b" tabindex="2" name="e_descr" style="max-width: 100% !important; height: 75px; max-height: 75px;"></textarea>
+								<textarea class="form-control m-b" tabindex="2" name="descr" style="max-width:100% !important;height:75px;max-height:75px;"></textarea>
 							</div>
 						</div>
 
@@ -185,7 +199,7 @@
 
 						<!-- 	Starts 	-->
 						<div class="form-group">
-							<label class="col-sm-2 control-label">Starts</label>
+							<label class="col-sm-2 control-label">Starts *</label>
 							<div class="col-sm-10">
 								<!-- 	Date 	-->
 								<input class="datepicker-input form-control inline" size="16" type="text" value="04-28-2014" data-date-format="mm-dd-yyyy" name="start_date" tabindex="3" />
@@ -218,7 +232,7 @@
 
 						<!-- 	Ends 	-->
 						<div class="form-group">
-							<label class="col-sm-2 control-label">Ends</label>
+							<label class="col-sm-2 control-label">Ends *</label>
 							<div class="col-sm-10">
 								<!-- 	Date 	-->
 								<input class="datepicker-input form-control inline" size="16" type="text" value="04-28-2014" data-date-format="mm-dd-yyyy" name="end_date" tabindex="7" />
@@ -253,7 +267,7 @@
 
 						<!-- 	Address 	-->
 						<div class="form-group">
-							<label class="col-sm-2 control-label">Address</label>
+							<label class="col-sm-2 control-label">Address *</label>
 							<div class="col-sm-8">
 								<input type="text" name="address" class="form-control m-b" tabindex="11" />
 							</div>
@@ -261,7 +275,7 @@
 
 						<!-- 	City 	-->
 						<div class="form-group">
-							<label class="col-sm-2 control-label">City</label>
+							<label class="col-sm-2 control-label">City *</label>
 							<div class="col-sm-8">
 								<input type="text" name="city" class="form-control m-b" tabindex="12" />
 							</div>
@@ -269,9 +283,10 @@
 
 						<!-- 	State 	-->
 						<div class="form-group">
-							<label class="col-sm-2 control-label">State</label>
+							<label class="col-sm-2 control-label">State *</label>
 							<div class="col-sm-10">
 									<select class="form-control m-b" name="state" style="width:180px" tabindex="13">
+										<option value="">select</option>
 										<optgroup label="Alaskan/Hawaiian Time Zone">
 											<option value="AK">Alaska</option>
 											<option value="HI">Hawaii</option>
@@ -338,7 +353,7 @@
 
 						<!-- 	Zip 	-->
 						<div class="form-group">
-							<label class="col-sm-2 control-label">Zip</label>
+							<label class="col-sm-2 control-label">Zip *</label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control m-b" name="zip" tabindex="14" style="width: 70px;">
 							</div>
@@ -368,7 +383,7 @@
 
 						<!-- 	Status 	-->
 						<div class="form-group">
-							<label class="col-sm-2 control-label">Status</label>
+							<label class="col-sm-2 control-label">Status *</label>
 							<div class="col-sm-10">
 								<select class="form-control m-b" name="status" tabindex="17" style="width: auto;">
 									@foreach ($statuses as $status)
