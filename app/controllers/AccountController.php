@@ -47,6 +47,18 @@ class AccountController extends BaseController
 	 */
 	public function getCalendar()
 	{
+		if (isset($_GET['id']))
+		{
+			$event_info = CalendarEvent::where('event_id', $_GET['id'])->get();
+
+			return View::make('account/calendar', [
+				'page_title' 	=> 'My Calendar',
+				'user' 			=> $this->user,
+				'statuses' 		=> DB::table('event_status')->get(),
+				'events' 		=> CalendarEvent::where('host_id', $this->user['id'])->get(),
+				'event_info' 	=> $event_info->first()
+			]);
+		}
 		return View::make('account/calendar', [
 			'page_title' 	=> 'My Calendar',
 			'user' 			=> $this->user,

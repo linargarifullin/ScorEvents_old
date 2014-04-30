@@ -100,7 +100,7 @@
 			<div class="list-group bg-white" id="event-list">
 				@if (! empty($events->get(0)))
 					@foreach ($events->all() as $event)
-						<a href="#" class="list-group-item" id="display-event">
+						<a href="{{ '?id='.$event['event_id'] }}" class="list-group-item" id="display-event">
 							<!--  event time  -->
 							<span class="badge bg-danger" id="event-time">
 								{{ date('g:i A', strtotime($event['start_time'])) }}
@@ -130,7 +130,7 @@
 		</header>
 
 		<!-- 	EVENT INFO 	-->
-		<header class="header bg-light bg-gradient hidden" id="display-event">
+		<header class="header bg-light bg-gradient {{ isset($_GET['id']) ? '' : 'hidden' }}" id="display-event">
 			<ul class="nav nav-tabs nav-white">
 				<li class="active"><a href="#activity" data-toggle="tab">Event</a></li>
 				<li class=""><a href="#events" data-toggle="tab">Guests</a></li>
@@ -393,10 +393,25 @@
 
 
 
-			<div class="tab-content hidden" id="display-event">
+			<div class="tab-content {{ isset($_GET['id']) ? '' : 'hidden' }}" id="display-event">
 				<div class="tab-pane active" id="activity">
+
+					<div class="wrapper m-t-md">
+							<small class="text-uc text-xs text-muted">Title</small>
+							<p class="m-l-lg">{{ empty($event_info) ? '' : $event_info['title'] }}</p>
+
+							<small class="text-uc text-xs text-muted">Description</small>
+							<p class="m-l-lg">{{ empty($event_info['description']) ? 'None' : $event_info['description'] }}</p>
+
+							<small class="text-uc text-xs text-muted">Starts</small>
+							<p class="m-l-lg">{{ empty($event_info) ? '' : date('g:i A D, M d Y', strtotime($event_info['start_time'])) }}</p>
+
+							<small class="text-uc text-xs text-muted">Ends</small>
+							<p class="m-l-lg">{{ empty($event_info) ? '' : date('g:i A D, M d Y', strtotime($event_info['end_time'])) }}</p>
+					</div>
+
 					<div class="wrapper">
-						<section class="panel m-t-lg">
+						<section class="panel m-t-md">
 							<form>
 								<textarea class="form-control no-border" rows="3" placeholder="Leave a comment..."></textarea>
 							</form>
@@ -526,15 +541,8 @@
     $("a.btn").click(function(){
       $("header#display-event").addClass("hidden");
       $("div#display-event").addClass("hidden");
-      $("header#create-event").removeClass("hidden");
-      $("section#create-event").removeClass("hidden");
-    });
-
-    $("a#display-event").click(function(){
-      $("header#create-event").addClass("hidden");
-      $("section#create-event").addClass("hidden");
-      $("header#display-event").removeClass("hidden");
-      $("div#display-event").removeClass("hidden");
+      $("header#create-event").toggleClass("hidden");
+      $("section#create-event").toggleClass("hidden");
     });
   </script>
 
