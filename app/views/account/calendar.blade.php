@@ -218,29 +218,30 @@
 							<label class="col-sm-2 control-label">Starts *</label>
 							<div class="col-sm-10">
 								<!-- 	Date 	-->
-								<input class="datepicker-input form-control inline" size="16" type="text" value="04-28-2014" data-date-format="mm-dd-yyyy" name="start_date" tabindex="3" />
+								<input class="datepicker-input form-control inline" size="16" type="text" value="2014-04-30" data-date-format="yyyy-mm-dd" name="start_date" tabindex="3" />
 
 								<!-- 	Time 	-->
 								<span>&nbsp;&nbsp;-&nbsp;&nbsp;
-									<!-- 	HH 	-->
+									<!-- 	hour 	-->
 									<select class="hour form-control inline" name="start_hour" tabindex="4" style="width: auto;">
 										<option value="12">12</option>
 										@for ($i = 1; $i < 12; $i++)
-											<option value="{{ $i }}">{{ ($i < 10 ? '0' : '') }}{{ $i }}</option>
+											<option value="{{ $i }}">{{ ($i < 10 ? '0' : '').$i }}</option>
 										@endfor
 									</select>&nbsp;&nbsp;:&nbsp;
 
-									<!-- 	mm 	-->
+									<!-- 	minute 	-->
 									<select class="minute form-control inline" name="start_minute" tabindex="5" style="width: auto;">
-										@for ($i = 0; $i < 60; $i += 5)
-											<option value="{{ $i }}">{{ ($i < 10 ? '0' : '') }}{{ $i }}</option>
+										<option value="00">00</option>
+										@for ($i = 5; $i < 60; $i += 5)
+											<option value="{{ ($i < 10 ? '0' : '').$i }}">{{ ($i < 10 ? '0' : '').$i }}</option>
 										@endfor
 									</select>&nbsp;&nbsp;
 
 									<!-- 	AM/PM 	-->
 									<select class="ampm form-control inline" name="start_ampm" tabindex="6" style="width: auto;">
-										<option value="am">AM</option>
-										<option value="pm">PM</option>
+										<option value="PM">PM</option>
+										<option value="AM">AM</option>
 									</select>
 								</span>
 							</div>
@@ -251,29 +252,30 @@
 							<label class="col-sm-2 control-label">Ends *</label>
 							<div class="col-sm-10">
 								<!-- 	Date 	-->
-								<input class="datepicker-input form-control inline" size="16" type="text" value="04-28-2014" data-date-format="mm-dd-yyyy" name="end_date" tabindex="7" />
+								<input class="datepicker-input form-control inline" size="16" type="text" value="2014-04-30" data-date-format="yyyy-mm-dd" name="end_date" tabindex="7" />
 
 								<!-- 	Time 	-->
 								<span>&nbsp;&nbsp;-&nbsp;&nbsp;
-									<!-- 	HH 	-->
+									<!-- 	hour 	-->
 									<select class="hour form-control inline" name="end_hour" tabindex="8" style="width: auto;">
 										<option value="12">12</option>
 										@for ($i = 1; $i < 12; $i++)
-											<option value="{{ $i }}">{{ ($i < 10 ? '0' : '') }}{{ $i }}</option>
+											<option value="{{ $i }}">{{ ($i < 10 ? '0' : '').$i }}</option>
 										@endfor
 									</select>&nbsp;&nbsp;:&nbsp;
 
-									<!-- 	mm 	-->
+									<!-- 	minute 	-->
 									<select class="minute form-control inline" name="end_minute" tabindex="9" style="width: auto;">
-										@for ($i = 0; $i < 60; $i += 5)
-											<option value="{{ $i }}">{{ ($i < 10 ? '0' : '') }}{{ $i }}</option>
+										<option value="00">00</option>
+										@for ($i = 5; $i < 60; $i += 5)
+											<option value="{{ ($i < 10 ? '0' : '').$i }}">{{ ($i < 10 ? '0' : '').$i }}</option>
 										@endfor
 									</select>&nbsp;&nbsp;
 
 									<!-- 	AM/PM 	-->
 									<select class="ampm form-control inline" name="end_ampm" tabindex="10" style="width: auto;">
-										<option value="am">AM</option>
-										<option value="pm">PM</option>
+										<option value="PM">PM</option>
+										<option value="AM">AM</option>
 									</select>
 								</span>
 							</div>

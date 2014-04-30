@@ -62,11 +62,11 @@ class AccountController extends BaseController
 
 		$validation = Validator::make($input, [
 			'title' 		=> 'required|between:6,255',
-			'start_date' 	=> 'required|date_format:"m-d-Y"|size:10',
+			'start_date' 	=> 'required|date_format:"Y-m-d"|size:10',
 			'start_hour' 	=> 'required',
 			'start_minute' 	=> 'required',
 			'start_ampm' 	=> 'required',
-			'end_date' 		=> 'required|date_format:"m-d-Y"|size:10',
+			'end_date' 		=> 'required|date_format:"Y-m-d"|size:10',
 			'end_hour' 		=> 'required',
 			'end_minute' 	=> 'required',
 			'end_ampm' 		=> 'required',
@@ -89,10 +89,10 @@ class AccountController extends BaseController
 			$event->state 		= $input['state'];
 			$event->zip 		= $input['zip'];
 			$event->status 		= $input['status'];
-			//$event->start_time 	= $input['start_time'];
-			//$event->end_time 	= $input['end_time'];
+			$event->start_time 	= date('Y-m-d H:i:s', strtotime($input['start_date'].' '.$input['start_hour'].':'.$input['start_minute'].' '.$input['start_ampm']));
+			$event->end_time 	= date('Y-m-d H:i:s', strtotime($input['end_date'].' '.$input['end_hour'].':'.$input['end_minute'].' '.$input['end_ampm']));
 			$event->save();
-			//date("H:i", strtotime($input['start_hour'].':'.$input['start_minute'].' '.$input['start_ampm']));
+
 			// Redirect to dashboard w/ success msg:
 			return Redirect::to('../account/calendar')
 				->with('success_msg', 'Event successfully created!');
