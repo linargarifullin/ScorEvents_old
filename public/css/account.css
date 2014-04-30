@@ -36,11 +36,22 @@ nav.nav-primary ul.nav li a i.fa {
 	border: none !important;
 }
 
+.navbar-nav.navbar-right>li>a {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#user-avatar {
+	max-height: 30px;
+	max-width: 30px;
+	margin-right: 5px;
+}
+
 /**
  * Fixes the issue when the page becomes misaligned
  * because the user's full name is too long.
  */
-ul.navbar-right #user-full-name {
+.navbar-right #user-full-name {
 	max-width: 120px;
 	height: 15px;
 }
@@ -72,6 +83,7 @@ ul.navbar-right #user-full-name {
 		margin: 0px -15px;
 	}
 }
+
 footer.footer .fa {
     transform:scale(1.3,1.3);
     -ms-transform:scale(1.3,1.3); /* IE 9 */

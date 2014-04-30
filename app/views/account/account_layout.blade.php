@@ -64,7 +64,7 @@
 						<!-- 	User (only for XS displays) 	-->
 						<li class="dropdown visible-xs">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i class="fa fa-user"></i>
+								<img src="../img/avatar_default.jpg" class="img-circle" id="user-avatar">
 								<div id="user-full-name">{{ $user['first_name'].' '.$user['last_name'] }}</div>
 								<b class="caret"></b>
 							</a>
@@ -153,7 +153,7 @@
 					<ul class="nav navbar-nav navbar-right hidden-xs">					
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i class="fa fa-user"></i>
+								<img src="../img/avatar_default.jpg" class="img-circle" id="user-avatar">
 								<div id="user-full-name">
 									{{ $user['first_name'].' '.$user['last_name'] }}
 								</div>
