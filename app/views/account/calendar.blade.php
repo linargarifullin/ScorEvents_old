@@ -433,75 +433,9 @@
 								<img src="../img/avatar_default.jpg" class="img-circle" id="user_avatar">
 							</a>
 							<a href="#" class="clear">
-								<small class="pull-right">3 minuts ago</small>
-								<strong class="block">Drew Wllon</strong>
-								<small>Wellcome and play this web application template ... </small>
-							</a>
-						</li>
-					
-						<li class="list-group-item">
-							<a href="#" class="thumb-sm pull-left m-r-sm">
-								<img src="../img/avatar_default.jpg" class="img-circle" id="user_avatar">
-							</a>
-							<a href="#" class="clear">
-								<small class="pull-right">1 hour ago</small>
-								<strong class="block">Jonathan George</strong>
-								<small>Morbi nec nunc condimentum...</small>
-							</a>
-						</li>
-					
-						<li class="list-group-item">
-							<a href="#" class="thumb-sm pull-left m-r-sm">
-								<img src="../img/avatar_default.jpg" class="img-circle" id="user_avatar">
-							</a>
-							<a href="#" class="clear">
-								<small class="pull-right">1 day ago</small>
-								<strong class="block">Jack Dorsty</strong>
-								<small>Morbi nec nunc condimentum...</small>
-							</a>
-						</li>
-					
-						<li class="list-group-item">
-							<a href="#" class="thumb-sm pull-left m-r-sm">
-								<img src="../img/avatar_default.jpg" class="img-circle" id="user_avatar">
-							</a>
-							<a href="#" class="clear">
-								<small class="pull-right">3 days ago</small>
-								<strong class="block">Morgen Kntooh</strong>
-								<small>Mobile first web app for startup...</small>
-							</a>
-						</li>
-					
-						<li class="list-group-item">
-							<a href="#" class="thumb-sm pull-left m-r-sm">
-								<img src="../img/avatar_default.jpg" class="img-circle" id="user_avatar">
-							</a>
-							<a href="#" class="clear">
-								<small class="pull-right">2 hours ago</small>
-								<strong class="block">Josh Long</strong>
-								<small>Vestibulum ullamcorper sodales nisi nec...</small>
-							</a>
-						</li>
-					
-						<li class="list-group-item">
-							<a href="#" class="thumb-sm pull-left m-r-sm">
-								<img src="../img/avatar_default.jpg" class="img-circle" id="user_avatar">
-							</a>
-							<a href="#" class="clear">
-								<small class="pull-right">1 day ago</small>
-								<strong class="block">Jack Dorsty</strong>
-								<small>Morbi nec nunc condimentum...</small>
-							</a>
-						</li>
-					
-						<li class="list-group-item">
-							<a href="#" class="thumb-sm pull-left m-r-sm">
-								<img src="../img/avatar_default.jpg" class="img-circle" id="user_avatar">
-							</a>
-							<a href="#" class="clear">
-								<small class="pull-right">3 days ago</small>
-								<strong class="block">Morgen Kntooh</strong>
-								<small>Mobile first web app for startup...</small>
+								<small class="pull-right">Today</small>
+								<strong class="block">Linar Garifullin</strong>
+								<small>Sample comment...</small>
 							</a>
 						</li>
 					</ul>
