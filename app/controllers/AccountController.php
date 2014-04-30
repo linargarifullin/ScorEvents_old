@@ -91,6 +91,21 @@ class AccountController extends BaseController
 			$event->status 		= $input['status'];
 			$event->start_time 	= date('Y-m-d H:i:s', strtotime($input['start_date'].' '.$input['start_hour'].':'.$input['start_minute'].' '.$input['start_ampm']));
 			$event->end_time 	= date('Y-m-d H:i:s', strtotime($input['end_date'].' '.$input['end_hour'].':'.$input['end_minute'].' '.$input['end_ampm']));
+
+			// If user had specified event description
+			if (! empty($input['description'])) {
+				$event->description = $input['description'];
+			}
+
+			// If user had specified event limit for min age
+			if (! empty($input['min_age'])) {
+				$event->min_age = $input['min_age'];
+			}
+
+			// If user had specified event limit for max age
+			if (! empty($input['max_age'])) {
+				$event->max_age = $input['max_age'];
+			}
 			$event->save();
 
 			// Redirect to dashboard w/ success msg:

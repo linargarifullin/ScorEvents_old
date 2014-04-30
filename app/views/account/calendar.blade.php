@@ -207,7 +207,7 @@
 						<div class="form-group">
 							<label class="col-sm-2 control-label">Description</label>
 							<div class="col-sm-8">
-								<textarea class="form-control m-b" tabindex="2" name="descr" style="max-width:100% !important;height:75px;max-height:75px;"></textarea>
+								<textarea class="form-control m-b" tabindex="2" name="description" style="max-width:100% !important;height:75px;max-height:75px;"></textarea>
 							</div>
 						</div>
 
@@ -373,7 +373,7 @@
 						<div class="form-group">
 							<label class="col-sm-2 control-label">Zip *</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control m-b" name="zip" tabindex="14" style="width: 70px;">
+								<input type="text" class="form-control m-b" name="zip" tabindex="14" style="width: 70px;" />
 							</div>
 						</div>
 
@@ -383,16 +383,16 @@
 						<div class="form-group">
 							<label class="col-sm-2 control-label">Age Limit</label>
 							<div class="col-sm-10">
-								<select class="form-control m-b inline" name="age_min" tabindex="15" style="width: auto;">
+								<select class="form-control m-b inline" name="min_age" tabindex="15" style="width: auto;">
 									<option value="">Min</option>
-									@for ($i = 0; $i < 100; $i++)
+									@for ($i = 1; $i < 100; $i++)
 										<option value="{{ $i }}">{{ $i }}</option>
 									@endfor
 								</select>
 								&nbsp;&nbsp;-&nbsp;&nbsp;
-								<select class="form-control m-b inline" name="age_max" tabindex="16" style="width: auto;">
+								<select class="form-control m-b inline" name="max_age" tabindex="16" style="width: auto;">
 									<option value="">Max</option>
-									@for ($i = 0; $i < 100; $i++)
+									@for ($i = 1; $i < 100; $i++)
 										<option value="{{ $i }}">{{ $i }}</option>
 									@endfor
 								</select>
