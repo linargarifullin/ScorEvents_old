@@ -1,8 +1,6 @@
 @extends('account/account_layout')
 
 @section('custom_css')
-	<link rel="stylesheet" href="../packages/todo-tpl/js/select2/select2.css" type="text/css" />
-	<link rel="stylesheet" href="../packages/todo-tpl/js/fuelux/fuelux.css" type="text/css" />
 	<link rel="stylesheet" href="../packages/todo-tpl/js/datepicker/datepicker.css" type="text/css" />
 	<link rel="stylesheet" href="../packages/todo-tpl/js/slider/slider.css" type="text/css" />
 
@@ -16,7 +14,15 @@
 			line-height: 30px !important;
 		}
 
-		/* (extra small) */
+		#event-list #event-title {
+			width: 65%;
+			font-size: 11px;
+		}
+		#event-list #event-time {
+			font-size: 10px;
+		}
+
+		/* 	Screen size: extra small 	*/
 		@media (max-width: 767px) {
 			input {
 				height: 30px !important;
@@ -34,6 +40,8 @@
 			select[multiple] { height: auto; }
 
 			input.datepicker-input { width: 90px; }
+
+			#event-list #event-title { width: 80%; }
 		}
   </style>
 @stop
@@ -42,6 +50,7 @@
 
 <!-- 	aside (left) 	-->
 <aside class="aside bg-white-only aside-lg b-r">
+	<!-- 	Page title 	-->
 	<header class="header text-center m-t-lg"><p class="h4">{{ $page_title }}</p></header>
 
 	<section class="wrapper">
@@ -130,11 +139,18 @@
 		</div>
 
 		<!-- 	Events for the day 	-->
-		<div class="list-group bg-white">
+		<div class="list-group bg-white" id="event-list">
 			@if (! empty($events->get(0)))
 				@foreach ($events->all() as $event)
-					<a href="#" class="list-group-item text-ellipsis">
-						<span class="badge bg-danger">12:00</span>{{ $event['title'] }}
+					<a href="#" class="list-group-item">
+						<!-- 	event time 	-->
+						<span class="badge bg-danger" id="event-time">
+							{{ date('g:i A', strtotime($event['start_time'])) }}
+						</span>
+						<!-- 	event title 	-->
+						<span class="text-ellipsis" id="event-title">
+							{{ $event['title'] }}
+						</span>
 					</a>
 				@endforeach
 			@else
@@ -142,7 +158,7 @@
 			@endif
 		</div>
 
-	</section><!-- 	./wrapper 	-->
+	</section>
 </aside><!-- 	./aside (left) 	-->
 
 
@@ -413,29 +429,10 @@
 
 
 @section('custom_js')
-	<!-- 	fuelux 	-->
-	<script src="../packages/todo-tpl/js/fuelux/fuelux.js"></script>
 	<!-- 	datepicker 	-->
 	<script src="../packages/todo-tpl/js/datepicker/bootstrap-datepicker.js"></script>
 	<!-- 	slider 	-->
 	<script src="../packages/todo-tpl/js/slider/bootstrap-slider.js"></script>
-	<!-- 	file 	input -->  
-	<script src="../packages/todo-tpl/js/file-input/bootstrap.file-input.js"></script>
-	<!-- 	combodate 	-->
-	<script src="../packages/todo-tpl/js/libs/moment.min.js"></script>
-	<script src="../packages/todo-tpl/js/combodate/combodate.js" cache="false"></script>
-	<!-- 	parsley 	-->
-	<script src="../packages/todo-tpl/js/parsley/parsley.min.js" cache="false"></script>
-	<script src="../packages/todo-tpl/js/parsley/parsley.extend.js" cache="false"></script>
-	<!-- 	select2 	-->
-	<script src="../packages/todo-tpl/js/select2/select2.min.js" cache="false"></script>
-	<!-- 	wysiwyg 	-->
-	<script src="../packages/todo-tpl/js/wysiwyg/jquery.hotkeys.js" cache="false"></script>
-	<script src="../packages/todo-tpl/js/wysiwyg/bootstrap-wysiwyg.js" cache="false"></script>
-	<script src="../packages/todo-tpl/js/wysiwyg/demo.js" cache="false"></script>
-	<!-- 	markdown 	-->
-	<script src="../packages/todo-tpl/js/markdown/epiceditor.min.js" cache="false"></script>
-	<script src="../packages/todo-tpl/js/markdown/demo.js" cache="false"></script>
 
 	<!-- 	New Event button handling 	-->
 	<script type="text/javascript">

@@ -27,12 +27,3 @@ Route::get('account', function() {
 	return Redirect::to('../account/dashboard');
 });
 Route::controller('account', 'AccountController');
-
-
-
-/**
- * Test case (ignore!)
- */
-Route::get('test', function() {
-	die('<br>completed.');
-});
