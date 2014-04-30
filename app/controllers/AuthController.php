@@ -83,19 +83,21 @@ class AuthController extends BaseController
 		// Input validation success! Proceed with registration.
 		if ($validation->passes())
 		{
-			// Add record to [users] table:
 			$user = new User;
 			$user->username 	= $input['username'];
 			$user->email 		= $input['email'];
 			$user->password 	= Hash::make($input['password']);
+
+			// Add record to [users] table
 			$user->save();
 
 
-			// Add record to [user_info] table:
 			$user_info = new UserInfo;
 			$user_info->user_id 	= $user->id;
 			$user_info->first_name 	= $input['first_name'];
 			$user_info->last_name  	= $input['last_name'];
+
+			// Add record to [user_info] table
 			$user_info->save();
 
 
@@ -105,11 +107,11 @@ class AuthController extends BaseController
 				User::find($user->id)->userInfo->toArray()
 			);
 
-			// Generate activation key (length):
+			// Generate activation key (length)
 			$user_data['activation_key'] = str_random(64);
 
 
-			// Insert activation key in [user_activation] table.
+			// Add record to [user_activation] table
 			DB::table('user_activation')->insert([
 				'user_id' 	=> $user_data['id'],
 				'key' 		=> $user_data['activation_key']

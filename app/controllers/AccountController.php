@@ -80,7 +80,6 @@ class AccountController extends BaseController
 		// Input validation success! Proceed with creating an event.
 		if ($validation->passes())
 		{
-			// Add record to [events] table:
 			$event = new CalendarEvent;
 			$event->host_id 	= $this->user['id'];
 			$event->title 		= $input['title'];
@@ -106,7 +105,10 @@ class AccountController extends BaseController
 			if (! empty($input['max_age'])) {
 				$event->max_age = $input['max_age'];
 			}
+
+			// Add record to [events] table
 			$event->save();
+
 
 			// Redirect to dashboard w/ success msg:
 			return Redirect::to('../account/calendar')
