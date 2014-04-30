@@ -24,8 +24,9 @@ select {
 	font-size: 10px;
 }
 
-#new-event-panel {
-	border: none;
+#create-event {
+	border-top: none;
+	border-left: none;
 	height: auto;
 	margin-bottom: 0px;
 }

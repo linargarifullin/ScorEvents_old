@@ -9,8 +9,6 @@
 
 @section('content')
 
-  <!--  Page title  -->
-
 <aside class="aside-lg bg-light lter b-r">
 	<section class="vbox">
 		<section class="scrollable">
@@ -102,7 +100,7 @@
 			<div class="list-group bg-white" id="event-list">
 				@if (! empty($events->get(0)))
 					@foreach ($events->all() as $event)
-						<a href="#" class="list-group-item">
+						<a href="#" class="list-group-item" id="display-event">
 							<!--  event time  -->
 							<span class="badge bg-danger" id="event-time">
 								{{ date('g:i A', strtotime($event['start_time'])) }}
@@ -123,18 +121,25 @@
 </aside>
 
 
-
-
-<!-- 	aside (right) 	-->
-<aside class="{{ $errors->any() ? 'bg-white' : '' }} b-t" id="right-side">
+<aside class="bg-white b-t" id="main-aside">
 	<section class="vbox">
-		<!-- 	Header 	-->
-		<header class="panel-heading pos-rlt font-bold {{ $errors->any() ? '' : 'hidden' }}" style="font-size: 16px;">
+
+		<!-- 	CREATE EVENT 	-->
+		<header class="panel-heading pos-rlt font-bold {{ $errors->any() ? '' : 'hidden' }}" id="create-event" style="font-size: 16px;">
 			<span class="arrow left"></span>New Event
 		</header>
 
+		<!-- 	EVENT INFO 	-->
+		<header class="header bg-light bg-gradient hidden" id="display-event">
+			<ul class="nav nav-tabs nav-white">
+				<li class="active"><a href="#activity" data-toggle="tab">Event</a></li>
+				<li class=""><a href="#events" data-toggle="tab">Guests</a></li>
+			</ul>
+		</header>
+
 		<section class="scrollable">
-			<section class="panel {{ $errors->any() ? '' : 'hidden' }}" id="new-event-panel">
+
+			<section class="panel {{ $errors->any() ? '' : 'hidden' }}" id="create-event">
 				<div class="row">
 					<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
 
@@ -385,9 +390,123 @@
 					{{ Form::close() }}
 				</div>
 			</section>
-		</section><!-- 	/.scrollable 	-->
+
+
+
+			<div class="tab-content hidden" id="display-event">
+				<div class="tab-pane active" id="activity">
+					<div class="wrapper">
+						<section class="panel m-t-lg">
+							<form>
+								<textarea class="form-control no-border" rows="3" placeholder="Leave a comment..."></textarea>
+							</form>
+
+							<footer class="panel-footer bg-light lter">
+								<button class="btn btn-info pull-right btn-sm">POST</button>
+					
+								<ul class="nav nav-pills nav-sm">
+									<li><a href="#"><i class="fa fa-camera"></i></a></li>
+									<li><a href="#"><i class="fa fa-video-camera"></i></a></li>
+								</ul>
+							</footer>
+						</section>
+					</div>
+
+					<ul class="list-group no-radius m-b-none m-t-n-xxs list-group-lg no-border">
+						<li class="list-group-item">
+							<a href="#" class="thumb-sm pull-left m-r-sm">
+								<img src="../img/avatar_default.jpg" class="img-circle" id="user_avatar">
+							</a>
+							<a href="#" class="clear">
+								<small class="pull-right">3 minuts ago</small>
+								<strong class="block">Drew Wllon</strong>
+								<small>Wellcome and play this web application template ... </small>
+							</a>
+						</li>
+					
+						<li class="list-group-item">
+							<a href="#" class="thumb-sm pull-left m-r-sm">
+								<img src="../img/avatar_default.jpg" class="img-circle" id="user_avatar">
+							</a>
+							<a href="#" class="clear">
+								<small class="pull-right">1 hour ago</small>
+								<strong class="block">Jonathan George</strong>
+								<small>Morbi nec nunc condimentum...</small>
+							</a>
+						</li>
+					
+						<li class="list-group-item">
+							<a href="#" class="thumb-sm pull-left m-r-sm">
+								<img src="../img/avatar_default.jpg" class="img-circle" id="user_avatar">
+							</a>
+							<a href="#" class="clear">
+								<small class="pull-right">1 day ago</small>
+								<strong class="block">Jack Dorsty</strong>
+								<small>Morbi nec nunc condimentum...</small>
+							</a>
+						</li>
+					
+						<li class="list-group-item">
+							<a href="#" class="thumb-sm pull-left m-r-sm">
+								<img src="../img/avatar_default.jpg" class="img-circle" id="user_avatar">
+							</a>
+							<a href="#" class="clear">
+								<small class="pull-right">3 days ago</small>
+								<strong class="block">Morgen Kntooh</strong>
+								<small>Mobile first web app for startup...</small>
+							</a>
+						</li>
+					
+						<li class="list-group-item">
+							<a href="#" class="thumb-sm pull-left m-r-sm">
+								<img src="../img/avatar_default.jpg" class="img-circle" id="user_avatar">
+							</a>
+							<a href="#" class="clear">
+								<small class="pull-right">2 hours ago</small>
+								<strong class="block">Josh Long</strong>
+								<small>Vestibulum ullamcorper sodales nisi nec...</small>
+							</a>
+						</li>
+					
+						<li class="list-group-item">
+							<a href="#" class="thumb-sm pull-left m-r-sm">
+								<img src="../img/avatar_default.jpg" class="img-circle" id="user_avatar">
+							</a>
+							<a href="#" class="clear">
+								<small class="pull-right">1 day ago</small>
+								<strong class="block">Jack Dorsty</strong>
+								<small>Morbi nec nunc condimentum...</small>
+							</a>
+						</li>
+					
+						<li class="list-group-item">
+							<a href="#" class="thumb-sm pull-left m-r-sm">
+								<img src="../img/avatar_default.jpg" class="img-circle" id="user_avatar">
+							</a>
+							<a href="#" class="clear">
+								<small class="pull-right">3 days ago</small>
+								<strong class="block">Morgen Kntooh</strong>
+								<small>Mobile first web app for startup...</small>
+							</a>
+						</li>
+					</ul>
+				</div>
+	
+				<div class="tab-pane" id="events">
+					<div class="text-center wrapper">
+						<i class="fa fa-spinner fa fa-spin fa fa-large"></i>
+					</div>
+				</div>
+		
+				<div class="tab-pane" id="interaction">
+					<div class="text-center wrapper">
+						<i class="fa fa-spinner fa fa-spin fa fa-large"></i>
+					</div>
+				</div>
+			</div>
+		</section>
 	</section>
-</aside><!-- 	/aside (right) 	-->
+</aside>
 
 
 @stop
@@ -405,9 +524,17 @@
   <!--  New Event button handling   -->
   <script type="text/javascript">
     $("a.btn").click(function(){
-      $("aside#right-side").toggleClass("bg-white");
-      $("section.panel").toggleClass("hidden");
-      $("header.panel-heading").toggleClass("hidden");
+      $("header#display-event").addClass("hidden");
+      $("div#display-event").addClass("hidden");
+      $("header#create-event").removeClass("hidden");
+      $("section#create-event").removeClass("hidden");
+    });
+
+    $("a#display-event").click(function(){
+      $("header#create-event").addClass("hidden");
+      $("section#create-event").addClass("hidden");
+      $("header#display-event").removeClass("hidden");
+      $("div#display-event").removeClass("hidden");
     });
   </script>
 
