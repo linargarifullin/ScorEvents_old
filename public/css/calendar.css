@@ -7,6 +7,10 @@ select {
 	line-height: 30px !important;
 }
 
+.visualmonthyear {
+	margin-top: 4px;
+}
+
 #event-list #event-title {
 	width: 65%;
 	font-size: 11px;

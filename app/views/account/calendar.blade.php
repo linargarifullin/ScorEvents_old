@@ -27,12 +27,12 @@
 
 				<!-- 	Calendar header 	-->
 				<table class="table header">
-					<tbody></tbody>
-						<tr>
-							<td><i class="fa fa-arrow-left"></i></td>
-							<td>April 2014</td>
-							<td><i class="fa fa-arrow-right"></i></td>
-						</tr>
+					<tbody><tr></tr></tbody>
+					<td><i class="fa fa-arrow-left"></i></td>
+					<td colspan="5" class="year span6">
+						<div class="visualmonthyear">April 2014</div>
+					</td>
+					<td><i class="fa fa-arrow-right"></i></td>
 				</table>
 
 				<!-- 	Calendar body 	-->
@@ -397,7 +397,8 @@
 	<!-- 	slider 	-->
 	<script src="../packages/todo-tpl/js/slider/bootstrap-slider.js"></script>
 	<!-- 	calendar 	-->
-	<script src="../packages/todo-tpl/js/calendar/bootstrap_calendar.js"></script>
+	<script src="../packages/todo-tpl/js/calendar/bootstrap_calendar.js" cache="false"></script>
+	<script src="../packages/todo-tpl/js/libs/jquery.pjax.js" cache="false"></script>
 
 	<!-- 	New Event button handling 	-->
 	<script type="text/javascript">
