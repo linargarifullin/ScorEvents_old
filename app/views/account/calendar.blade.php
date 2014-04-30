@@ -435,7 +435,17 @@
 							<a href="#" class="clear">
 								<small class="pull-right">Today</small>
 								<strong class="block">Linar Garifullin</strong>
-								<small>Sample comment...</small>
+								<small>Test comment #1...</small>
+							</a>
+						</li>
+						<li class="list-group-item">
+							<a href="#" class="thumb-sm pull-left m-r-sm">
+								<img src="../img/avatar_default.jpg" class="img-circle" id="user_avatar">
+							</a>
+							<a href="#" class="clear">
+								<small class="pull-right">Today</small>
+								<strong class="block">Linar Garifullin</strong>
+								<small>Test comment #2...</small>
 							</a>
 						</li>
 					</ul>
