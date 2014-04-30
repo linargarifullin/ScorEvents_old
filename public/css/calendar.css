@@ -7,6 +7,11 @@ select {
 	line-height: 30px !important;
 }
 
+/* No border on top of the calendar */
+.calendar tbody, td {
+	border: none !important;
+}
+
 .visualmonthyear {
 	margin-top: 4px;
 }
@@ -19,6 +24,11 @@ select {
 	font-size: 10px;
 }
 
+#new-event-panel {
+	border: none;
+	height: auto;
+	margin-bottom: 0px;
+}
 /* 	Screen size: extra small 	*/
 @media (max-width: 767px) {
 	input {

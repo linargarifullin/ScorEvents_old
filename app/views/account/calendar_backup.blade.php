@@ -1,146 +1,140 @@
 @extends('account/account_layout')
 
 @section('custom_css')
-  <link rel="stylesheet" href="../packages/todo-tpl/js/calendar/bootstrap_calendar.css" type="text/css" />
-  <link rel="stylesheet" href="../packages/todo-tpl/js/datepicker/datepicker.css" type="text/css" />
-  <link rel="stylesheet" href="../packages/todo-tpl/js/slider/slider.css" type="text/css" />
-  <link rel="stylesheet" href="../css/calendar.css" type="text/css" />
+	<link rel="stylesheet" href="../packages/todo-tpl/js/calendar/bootstrap_calendar.css" type="text/css" />
+	<link rel="stylesheet" href="../packages/todo-tpl/js/datepicker/datepicker.css" type="text/css" />
+	<link rel="stylesheet" href="../packages/todo-tpl/js/slider/slider.css" type="text/css" />
+	<link rel="stylesheet" href="../css/calendar.css" type="text/css" />
 @stop
 
 @section('content')
 
-  <!--  Page title  -->
-<section id="content">
-<section class="vbox">
-<header class="header bg-white" id="page-header"><p>{{ $page_title }}</p></header>
-<section class="scrollable">
-<section class="hbox stretch">
-<aside class="aside-lg bg-light lter b-r">
-<section class="vbox">
-<section class="scrollable">
+<!-- 	aside (left) 	-->
+<aside class="aside bg-white-only aside-lg b-r">
+	<!-- 	Page title 	-->
+	<header class="header text-center m-t-md"><p class="h4">{{ $page_title }}</p></header>
 
-	<div class="wrapper b-t">
+	<section class="wrapper">
 
-		<!--  New Event button  -->
+		<!-- 	New Event button 	-->
 		<div class="text-center clearfix">
-		<a class="btn btn-success m-b-lg"><i class="fa fa-plus"></i>&nbsp;&nbsp;New Event</a>
+			<a class="btn btn-success m-b-lg"><i class="fa fa-plus"></i>&nbsp;&nbsp;New Event</a>
 		</div>
 
-		<!--  Calendar  -->
+		<!-- 	Calendar 	-->
 		<div id="calendar" class="m-t-lg">
-		<div class="calendar" id="cal_1t7p">
+			<div class="calendar" id="cal_1t7p">
 
-		  <!--  Calendar header   -->
-		  <table class="table header">
-		    <tbody><tr></tr></tbody>
-		    <td><i class="fa fa-arrow-left"></i></td>
-		    <td colspan="5" class="year span6">
-		      <div class="visualmonthyear">April 2014</div>
-		    </td>
-		    <td><i class="fa fa-arrow-right"></i></td>
-		  </table>
+				<!-- 	Calendar header 	-->
+				<table class="table header">
+					<tbody><tr></tr></tbody>
+					<td><i class="fa fa-arrow-left"></i></td>
+					<td colspan="5" class="year span6">
+						<div class="visualmonthyear">April 2014</div>
+					</td>
+					<td><i class="fa fa-arrow-right"></i></td>
+				</table>
 
-		  <!--  Calendar body   -->
-		  <table class="daysmonth table table">
-		    <tbody>
-		      <!--  Days of the week  -->
-		      <tr class="week_days">
-		        <td class="first">S</td>
-		        <td>M</td>
-		        <td>T</td>
-		        <td>W</td>
-		        <td>T</td>
-		        <td>F</td>
-		        <td class="last">S</td>
-		      </tr>
-		      <!--  Dates   -->
-		      <tr>
-		        <td class="invalid first"></td>
-		        <td class="invalid"></td>
-		        <td id="cal_1t7p_1_4_2014"><a>1</a></td>
-		        <td id="cal_1t7p_2_4_2014"><a>2</a></td>
-		        <td id="cal_1t7p_3_4_2014"><a>3</a></td>
-		        <td id="cal_1t7p_4_4_2014"><a>4</a></td>
-		        <td id="cal_1t7p_5_4_2014" class="last"><a>5</a></td>
-		      </tr>
-		      <tr>
-		        <td id="cal_1t7p_6_4_2014" class="first"><a>6</a></td>
-		        <td id="cal_1t7p_7_4_2014"><a>7</a></td>
-		        <td id="cal_1t7p_8_4_2014"><a>8</a></td>
-		        <td id="cal_1t7p_9_4_2014"><a>9</a></td>
-		        <td id="cal_1t7p_10_4_2014"><a>10</a></td>
-		        <td id="cal_1t7p_11_4_2014"><a>11</a></td>
-		        <td id="cal_1t7p_12_4_2014" class="last"><a>12</a></td>
-		      </tr>
-		      <tr>
-		        <td id="cal_1t7p_13_4_2014" class="first"><a>13</a></td>
-		        <td id="cal_1t7p_14_4_2014"><a>14</a></td>
-		        <td id="cal_1t7p_15_4_2014"><a>15</a></td>
-		        <td id="cal_1t7p_16_4_2014"><a>16</a></td>
-		        <td id="cal_1t7p_17_4_2014"><a>17</a></td>
-		        <td id="cal_1t7p_18_4_2014"><a>18</a></td>
-		        <td id="cal_1t7p_19_4_2014" class="last"><a>19</a></td>
-		      </tr>
-		      <tr>
-		        <td id="cal_1t7p_20_4_2014" class="first"><a>20</a></td>
-		        <td id="cal_1t7p_21_4_2014"><a>21</a></td>
-		        <td id="cal_1t7p_22_4_2014"><a>22</a></td>
-		        <td id="cal_1t7p_23_4_2014"><a>23</a></td>
-		        <td id="cal_1t7p_24_4_2014"><a>24</a></td>
-		        <td id="cal_1t7p_25_4_2014"><a>25</a></td>
-		        <td id="cal_1t7p_26_4_2014" class="last"><a>26</a></td>
-		      </tr>
-		      <tr>
-		        <td id="cal_1t7p_27_4_2014" class="first"><a>27</a></td>
-		        <td id="cal_1t7p_28_4_2014"><a>28</a></td>
-		        <td id="cal_1t7p_29_4_2014"><a>29</a></td>
-		        <td id="cal_1t7p_30_4_2014"><a>30</a></td>
-		        <td class="invalid"></td>
-		        <td class="invalid"></td>
-		        <td class="invalid last"></td>
-		      </tr>
-		    </tbody>
-		  </table>
+				<!-- 	Calendar body 	-->
+				<table class="daysmonth table table">
+					<tbody>
+						<!-- 	Days of the week 	-->
+						<tr class="week_days">
+							<td class="first">S</td>
+							<td>M</td>
+							<td>T</td>
+							<td>W</td>
+							<td>T</td>
+							<td>F</td>
+							<td class="last">S</td>
+						</tr>
+						<!-- 	Dates 	-->
+						<tr>
+							<td class="invalid first"></td>
+							<td class="invalid"></td>
+							<td id="cal_1t7p_1_4_2014"><a>1</a></td>
+							<td id="cal_1t7p_2_4_2014"><a>2</a></td>
+							<td id="cal_1t7p_3_4_2014"><a>3</a></td>
+							<td id="cal_1t7p_4_4_2014"><a>4</a></td>
+							<td id="cal_1t7p_5_4_2014" class="last"><a>5</a></td>
+						</tr>
+						<tr>
+							<td id="cal_1t7p_6_4_2014" class="first"><a>6</a></td>
+							<td id="cal_1t7p_7_4_2014"><a>7</a></td>
+							<td id="cal_1t7p_8_4_2014"><a>8</a></td>
+							<td id="cal_1t7p_9_4_2014"><a>9</a></td>
+							<td id="cal_1t7p_10_4_2014"><a>10</a></td>
+							<td id="cal_1t7p_11_4_2014"><a>11</a></td>
+							<td id="cal_1t7p_12_4_2014" class="last"><a>12</a></td>
+						</tr>
+						<tr>
+							<td id="cal_1t7p_13_4_2014" class="first"><a>13</a></td>
+							<td id="cal_1t7p_14_4_2014"><a>14</a></td>
+							<td id="cal_1t7p_15_4_2014"><a>15</a></td>
+							<td id="cal_1t7p_16_4_2014"><a>16</a></td>
+							<td id="cal_1t7p_17_4_2014"><a>17</a></td>
+							<td id="cal_1t7p_18_4_2014"><a>18</a></td>
+							<td id="cal_1t7p_19_4_2014" class="last"><a>19</a></td>
+						</tr>
+						<tr>
+							<td id="cal_1t7p_20_4_2014" class="first"><a>20</a></td>
+							<td id="cal_1t7p_21_4_2014"><a>21</a></td>
+							<td id="cal_1t7p_22_4_2014"><a>22</a></td>
+							<td id="cal_1t7p_23_4_2014"><a>23</a></td>
+							<td id="cal_1t7p_24_4_2014"><a>24</a></td>
+							<td id="cal_1t7p_25_4_2014"><a>25</a></td>
+							<td id="cal_1t7p_26_4_2014" class="last"><a>26</a></td>
+						</tr>
+						<tr>
+							<td id="cal_1t7p_27_4_2014" class="first"><a>27</a></td>
+							<td id="cal_1t7p_28_4_2014"><a>28</a></td>
+							<td id="cal_1t7p_29_4_2014"><a>29</a></td>
+							<td id="cal_1t7p_30_4_2014"><a>30</a></td>
+							<td class="invalid"></td>
+							<td class="invalid"></td>
+							<td class="invalid last"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
-		</div>
 
-		<!--  Events for the day  -->
+		<!-- 	Events for the day 	-->
 		<div class="list-group bg-white" id="event-list">
-		@if (! empty($events->get(0)))
-		  @foreach ($events->all() as $event)
-		    <a href="#" class="list-group-item">
-		      <!--  event time  -->
-		      <span class="badge bg-danger" id="event-time">
-		        {{ date('g:i A', strtotime($event['start_time'])) }}
-		      </span>
-		      <!--  event title   -->
-		      <span class="text-ellipsis" id="event-title">
-		        {{ $event['title'] }}
-		      </span>
-		    </a>
-		  @endforeach
-		@else
-		  <div class="text-center">No events</div>
-		@endif
+			@if (! empty($events->get(0)))
+				@foreach ($events->all() as $event)
+					<a href="#" class="list-group-item">
+						<!-- 	event time 	-->
+						<span class="badge bg-danger" id="event-time">
+							{{ date('g:i A', strtotime($event['start_time'])) }}
+						</span>
+						<!-- 	event title 	-->
+						<span class="text-ellipsis" id="event-title">
+							{{ $event['title'] }}
+						</span>
+					</a>
+				@endforeach
+			@else
+				<div class="text-center">No events</div>
+			@endif
 		</div>
-	</div>
-</section>
-</section>
-</aside>
 
+	</section>
+</aside><!-- 	./aside (left) 	-->
 
 
 
 <!-- 	aside (right) 	-->
-<aside class="{{ $errors->any() ? 'bg-white' : '' }} b-t" id="right-side">
+<aside class="{{ $errors->any() ? 'bg-white' : '' }}" id="right-side">
 	<section class="vbox">
-		<!-- 	Header 	-->
-		<header class="panel-heading pos-rlt font-bold {{ $errors->any() ? '' : 'hidden' }}" style="font-size: 16px;">
-			<span class="arrow left"></span>New Event
-		</header>
-
 		<section class="scrollable">
-			<section class="panel {{ $errors->any() ? '' : 'hidden' }}" id="new-event-panel">
+			<section class="panel {{ $errors->any() ? '' : 'hidden' }}" style="border-left: none; border-bottom: none; height: auto; margin-bottom: 0px;">
+
+				<!-- 	Header 	-->
+				<header class="panel-heading pos-rlt font-bold" style="font-size: 16px;">
+					<span class="arrow left"></span>New Event
+				</header>
+
 				<div class="row">
 					<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
 
@@ -391,7 +385,7 @@
 					{{ Form::close() }}
 				</div>
 			</section>
-		</section><!-- 	scrollable 	-->
+		</section>
 	</section>
 </aside><!-- 	./aside (right) 	-->
 
@@ -399,21 +393,20 @@
 
 
 @section('custom_js')
-  <!--  datepicker  -->
-  <script src="../packages/todo-tpl/js/datepicker/bootstrap-datepicker.js"></script>
-  <!--  slider  -->
-  <script src="../packages/todo-tpl/js/slider/bootstrap-slider.js"></script>
-  <!--  calendar  -->
-  <script src="../packages/todo-tpl/js/calendar/bootstrap_calendar.js" cache="false"></script>
-  <script src="../packages/todo-tpl/js/libs/jquery.pjax.js" cache="false"></script>
+	<!-- 	datepicker 	-->
+	<script src="../packages/todo-tpl/js/datepicker/bootstrap-datepicker.js"></script>
+	<!-- 	slider 	-->
+	<script src="../packages/todo-tpl/js/slider/bootstrap-slider.js"></script>
+	<!-- 	calendar 	-->
+	<script src="../packages/todo-tpl/js/calendar/bootstrap_calendar.js" cache="false"></script>
+	<script src="../packages/todo-tpl/js/libs/jquery.pjax.js" cache="false"></script>
 
-  <!--  New Event button handling   -->
-  <script type="text/javascript">
-    $("a.btn").click(function(){
-      $("aside#right-side").toggleClass("bg-white");
-      $("section.panel").toggleClass("hidden");
-      $("header.panel-heading").toggleClass("hidden");
-    });
-  </script>
+	<!-- 	New Event button handling 	-->
+	<script type="text/javascript">
+		$("a.btn").click(function(){
+			$("aside#right-side").toggleClass("bg-white");
+			$("section.panel").toggleClass("hidden");
+		});
+	</script>
 
 @stop

@@ -27,13 +27,11 @@ nav.nav-primary ul.nav li a i.fa {
 	min-width: 20px;
 }
 
+#page-header {
+	font-size: 18px;
+}
 .aside.nav-vertical ul.nav i.fa {
 	width: auto;
-}
-
-/* No border on top of the calendar */
-.calendar tbody, td {
-	border: none !important;
 }
 
 .navbar-nav.navbar-right>li>a {
@@ -53,7 +51,7 @@ nav.nav-primary ul.nav li a i.fa {
  */
 .navbar-right #user-full-name {
 	max-width: 120px;
-	height: 15px;
+	vertical-align: middle;
 }
 
 #user-full-name {
@@ -71,16 +69,21 @@ nav.nav-primary ul.nav li a i.fa {
 
 	#user-full-name {
 		max-width: 80%;
-		height: 15px;
+		height: auto;
 		display: inline-block;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
+	#user-avatar {
+		max-height: 20px;
+		max-width: 20px;
+	}
+
 	form#searchbar {
 		border-top: 0px;
 		border-bottom: 0px;
-		margin: 0px -15px;
+		
 	}
 }
 
