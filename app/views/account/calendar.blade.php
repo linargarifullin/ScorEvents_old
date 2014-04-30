@@ -1,49 +1,10 @@
 @extends('account/account_layout')
 
 @section('custom_css')
+	<link rel="stylesheet" href="../packages/todo-tpl/js/calendar/bootstrap_calendar.css" type="text/css" />
 	<link rel="stylesheet" href="../packages/todo-tpl/js/datepicker/datepicker.css" type="text/css" />
 	<link rel="stylesheet" href="../packages/todo-tpl/js/slider/slider.css" type="text/css" />
-
-	<style>
-		input.datepicker-input {
-			width: 120px;
-		}
-
-		select {
-			height: 30px !important;
-			line-height: 30px !important;
-		}
-
-		#event-list #event-title {
-			width: 65%;
-			font-size: 11px;
-		}
-		#event-list #event-time {
-			font-size: 10px;
-		}
-
-		/* 	Screen size: extra small 	*/
-		@media (max-width: 767px) {
-			input {
-				height: 30px !important;
-				padding: 5px 10px !important;
-				font-size: 11px !important;
-				line-height: 1.5 !important;
-				border-radius: 3px !important;
-			}
-			
-			select {
-				font-size: 11px !important;
-			}
-			
-			textarea,
-			select[multiple] { height: auto; }
-
-			input.datepicker-input { width: 90px; }
-
-			#event-list #event-title { width: 80%; }
-		}
-  </style>
+	<link rel="stylesheet" href="../css/calendar.css" type="text/css" />
 @stop
 
 @section('content')
@@ -435,6 +396,8 @@
 	<script src="../packages/todo-tpl/js/datepicker/bootstrap-datepicker.js"></script>
 	<!-- 	slider 	-->
 	<script src="../packages/todo-tpl/js/slider/bootstrap-slider.js"></script>
+	<!-- 	calendar 	-->
+	<script src="../packages/todo-tpl/js/calendar/bootstrap_calendar.js"></script>
 
 	<!-- 	New Event button handling 	-->
 	<script type="text/javascript">

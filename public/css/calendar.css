@@ -1,0 +1,38 @@
+input.datepicker-input {
+	width: 120px;
+}
+
+select {
+	height: 30px !important;
+	line-height: 30px !important;
+}
+
+#event-list #event-title {
+	width: 65%;
+	font-size: 11px;
+}
+#event-list #event-time {
+	font-size: 10px;
+}
+
+/* 	Screen size: extra small 	*/
+@media (max-width: 767px) {
+	input {
+		height: 30px !important;
+		padding: 5px 10px !important;
+		font-size: 11px !important;
+		line-height: 1.5 !important;
+		border-radius: 3px !important;
+	}
+	
+	select {
+		font-size: 11px !important;
+	}
+	
+	textarea,
+	select[multiple] { height: auto; }
+
+	input.datepicker-input { width: 90px; }
+
+	#event-list #event-title { width: 80%; }
+}
