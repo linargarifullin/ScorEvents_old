@@ -172,7 +172,16 @@
 
 			<section class="scrollable">
 				<section class="hbox stretch">
-					@yield('content')
+				<section id="content">
+					<section class="vbox">
+					<header class="header bg-white" id="page-header"><p>{{ $page_title }}</p></header>
+					<section class="scrollable">
+					<section class="hbox stretch">
+						@yield('content')
+					</section>
+					</section>
+					</section>
+					</section>
 				</section>
 			</section>
 		</section>

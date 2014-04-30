@@ -10,14 +10,10 @@
 @section('content')
 
   <!--  Page title  -->
-<section id="content">
-<section class="vbox">
-<header class="header bg-white" id="page-header"><p>{{ $page_title }}</p></header>
-<section class="scrollable">
-<section class="hbox stretch">
-<aside class="aside-lg bg-light lter b-r">
-<section class="vbox">
-<section class="scrollable">
+
+	<aside class="aside-lg bg-light lter b-r">
+	<section class="vbox">
+	<section class="scrollable">
 
 	<div class="wrapper b-t">
 
@@ -391,9 +387,10 @@
 					{{ Form::close() }}
 				</div>
 			</section>
-		</section><!-- 	scrollable 	-->
+		</section><!-- 	/.scrollable 	-->
 	</section>
-</aside><!-- 	./aside (right) 	-->
+</aside><!-- 	/aside (right) 	-->
+
 
 @stop
 
